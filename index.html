@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Play width me</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.easing.min.js"></script>
+	<script src="./js/main.js"></script>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-3 p-0"><a href="#"><img src="./images/logo.png" alt="logo" id="logo"></a></div>
+			<div class="col-sm-8 col-md-8 col-lg-5">
+				<div id="search_box">
+					<form action="get">
+						<input type="text">
+					</form>
+					<div class="btn" id="search_btn">검색</div>
+				</div>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="btn" id="login_btn">login</div>			
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2">
+				<div class="btn" id="purchase_btn">purchase</div>
+			</div>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-8 p-0 pr-md-0 pr-lg-3">
+				<div class="col-sm-12 p-0" id="new_song">
+					<h5>최신곡</h5>
+					<ul>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song01.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">괜찮아</span>
+							<span class="song_aut">조아람</span>
+							<span class="song_alb">괜찮아</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song02.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">눈이 내린다</span>
+							<span class="song_aut">지오디(GOD)</span>
+							<span class="song_alb">눈이 내린다</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song03.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">다시 소년(re-mastered)</span>
+							<span class="song_aut">재주소년</span>
+							<span class="song_alb">지났을 줄이야</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song04.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">Thank U Soooo Much</span>
+							<span class="song_aut">유빈(Yubin)</span>
+							<span class="song_alb">#TUSM</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song05.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">010-</span>
+							<span class="song_aut">정한</span>
+							<span class="song_alb">010-</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song06.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">백년해로</span>
+							<span class="song_aut">선우정아(Sunwoojunga)</span>
+							<span class="song_alb">백년해로</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song07.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">이 밤이 특별해진 건</span>
+							<span class="song_aut">어반 자카파(Urban Zakapa)</span>
+							<span class="song_alb">[5]</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song08.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">Till Midnight(Feat. 김기쁨)</span>
+							<span class="song_aut">Ferry(페리)</span>
+							<span class="song_alb">Midnight</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song09.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">최선</span>
+							<span class="song_aut">9</span>
+							<span class="song_alb">최선</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song10.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">하늘 별(Feat. 스텔라장)</span>
+							<span class="song_aut">김영근(슈버스타K 2016)</span>
+							<span class="song_alb">하늘 별</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song11.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">fade out(Feat. Nathania)</span>
+							<span class="song_aut">woorim</span>
+							<span class="song_alb">사전준비</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song12.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">사슴의 눈물(Feat. 사야(Saya!))</span>
+							<span class="song_aut">먼데이 키즈(Monday Kiz)</span>
+							<span class="song_alb">계룡선녀전 OST</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song13.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">At home</span>
+							<span class="song_aut">Roo(루)</span>
+							<span class="song_alb">은주의 방 OST</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song14.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">크리스마스의 추억이</span>
+							<span class="song_aut">전진희x이설아</span>
+							<span class="song_alb">크리스마스의 추억이</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+						<li>
+							<div class="form-check-inline">
+								<label class="form-check-label" for="song01">
+									<input type="checkbox" class="form-check-input" id="song01">
+								</label>
+							</div>
+							<img src="./images/new/song15.jpg." class="rounded" alt="song_thumb01">
+							<span class="song_tit">돌아온 겨울 돌아올 그때</span>
+							<span class="song_aut">네이브로(NeighBro.)</span>
+							<span class="song_alb">겨울, 사랑</span>
+							<a href="#"><i class="fas fa-play-circle"></i><span>듣기</span></a>
+							<a href="#"><i class="fas fa-download"></i><span>다운</span></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-12 p-0 mt-4" id="new_album">
+					<h5>최신 앨범</h5>
+					<div>
+						<div id="left_btn"><div><i class="fas fa-angle-left"></i></div></div>
+						<ul>
+							<li>
+								<div>
+									<p>EDEN_STARDUST.07</p>
+									<p>이든(EDEN), 신지수</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album01.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>흔한 이별</p>
+									<p>허각</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album02.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>첫눈처럼 너에게 가겠다</p>
+									<p>김범수</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album03.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>LANGUAGE</p>
+									<p>XXX</p>
+									<p>2018.11.28｜정규</p>
+								</div>
+								<img src="./images/new/album04.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>우리의 거리</p>
+									<p>려욱(RYEOWOOK)</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album05.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>Late Night</p>
+									<p>로꼬</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album06.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>Pinocchio</p>
+									<p>밤비(Bambi)</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album07.jpg" alt="album_thum01">
+							</li>
+							<li>
+								<div>
+									<p>고장</p>
+									<p>김호연</p>
+									<p>2018.11.28｜싱글</p>
+								</div>
+								<img src="./images/new/album08.jpg" alt="album_thum01">
+							</li>
+						</ul>
+						<div id="right_btn"><div><i class="fas fa-angle-right"></i></div></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-4 col-lg-4 d-md-none d-lg-block p-0">
+				<h5>실시간 차트</h5>
+				<ul id="realChart">
+					<li class="on">
+						<a href="#">
+							<p class="rankNum">1</p>
+							<img src="./images/chart/thumb01.jpg" alt="chart_thumb01">
+							<p class="rankTit">이 밤이 특별해진 건</p>
+							<p class="rankAut">어반 자카파(Urban Zakapa)</p>
+							<p class="rankSta up">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">2</p>
+							<img src="./images/chart/thumb02.jpg" alt="chart_thumb02">
+							<p class="rankTit">아낙네</p>
+							<p class="rankAut">MINO(송민호)</p>
+							<p class="rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">3</p>
+							<img src="./images/chart/thumb03.jpg" alt="chart_thumb03">
+							<p class="rankTit">눈이 내린다</p>
+							<p class="rankAut">지오디(GOD)</p>
+							<p class="rankSta none"></p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">4</p>
+							<img src="./images/chart/thumb04.jpg" alt="chart_thumb04">
+							<p class="rankTit">SOLO</p>
+							<p class="rankAut">제니(JENNIE)</p>
+							<p class="rankSta up">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">5</p>
+							<img src="./images/chart/thumb05.jpg" alt="chart_thumb05">
+							<p class="rankTit">그대가 내 안에 박혔다</p>
+							<p class="rankAut">황치열</p>
+							<p class="rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">6</p>
+							<img src="./images/chart/thumb06.jpg" alt="chart_thumb06">
+							<p class="rankTit">알러뷰</p>
+							<p class="rankAut">EXID</p>
+							<p class="rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">7</p>
+							<img src="./images/chart/thumb07.jpg" alt="chart_thumb07">
+							<p class="rankTit">YES or YES</p>
+							<p class="rankAut">TWICE(트와이스)</p>
+							<p class="rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">8</p>
+							<img src="./images/chart/thumb08.jpg" alt="chart_thumb08">
+							<p class="rankTit">thank u, next</p>
+							<p class="rankAut">Ariana Grande(아리아나 그란데)</p>
+							<p class="rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">9</p>
+							<img src="./images/chart/thumb09.jpg" alt="chart_thumb09">
+							<p class="rankTit">너를 만나</p>
+							<p class="rankAut">폴킴(Pual Kim)</p>
+							<p class="rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="rankNum">10</p>
+							<img src="./images/chart/thumb10.jpg" alt="chart_thumb010">
+							<p class="rankTit">찾아가세요</p>
+							<p class="rankAut">러블리즈(Lovelyz)</p>
+							<p class="rankSta none">1</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container p-0 mt-5">
+		<ul class="nav nav-tabs nav-justified">
+			<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#ballad">발라드</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rap">랩/힙합</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#soul">R&B/Soul</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#indie">인디음악</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rock">록/메탈</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#trot">트로트</a></li>
+		</ul>
+		<div class="tab-content" id="tab_contents">
+			<div id="ballad" class="container tab-pane active pt-3">
+				<ul class="card-columns"> 	
+					<li class="card bf-success">
+						<img src="#" alt="ballad01" class="card-img-top">
+						<div class="card-body">
+							<h4 class="card-title">너를 만나</h4>
+							<p class="card-text">폴킴 앨범 너를 만나</p>
+							<a href="#" class="card-link">듣기</a>
+							<a href="#" class="card-link">담기</a>
+							<a href="#" class="card-link">다운</a>
+						</div>
+					</li>
+					<li class="card bf-success">
+						<img src="#" alt="ballad01" class="card-img-top">
+						<div class="card-body">
+							<h4 class="card-title">너를 만나</h4>
+							<p class="card-text">폴킴 앨범 너를 만나</p>
+							<a href="#" class="card-link">듣기</a>
+							<a href="#" class="card-link">담기</a>
+							<a href="#" class="card-link">다운</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div id="rap" class="container tab-pane fade pt-3">
+				<ul class="card-columns"> 	
+					<li class="card bf-success">
+						<img src="#" alt="ballad01" class="card-img-top">
+						<div class="card-body">
+							<h4 class="card-title">힙</h4>
+							<p class="card-text">폴킴 앨범 너를 만나</p>
+							<a href="#" class="card-link">듣기</a>
+							<a href="#" class="card-link">담기</a>
+							<a href="#" class="card-link">다운</a>
+						</div>
+					</li>
+					<li class="card bf-success">
+						<img src="#" alt="ballad01" class="card-img-top">
+						<div class="card-body">
+							<h4 class="card-title">너를 만나</h4>
+							<p class="card-text">폴킴 앨범 너를 만나</p>
+							<a href="#" class="card-link">듣기</a>
+							<a href="#" class="card-link">담기</a>
+							<a href="#" class="card-link">다운</a>
+						</div>
+					</li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+</body>
+</html>
+
+
+<!-- <div class="card bg-danger">
+	<img src="#" alt="ballad01" class="card-img-top">
+	<div class="card-body">
+		<h4 class="card-title">너를 만나</h4>
+		<p class="card-text">폴킴 앨범 너를 만나</p>
+		<a href="#" class="card-link">듣기</a>
+		<a href="#" class="card-link">담기</a>
+		<a href="#" class="card-link">다운</a>
+	</div>
+</div> -->

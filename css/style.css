@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+*{vertical-align:top;}
+body{font-family: 'Noto Sans KR', sans-serif;}
+p{margin-bottom:0;}
+
+
+/*------------------------------
+-----------해더 디자인-----------
+------------------------------*/
+#logo{display:block; width:120px;}
+
+/*------------------------------
+--------실시간차트 디자인--------
+------------------------------*/
+#realChart{height:530px;}
+#realChart>li{margin-bottom:5px}
+#realChart>li>a{display:block; position:relative; height:40px; border:1px solid #f5f5f5; _background:#f5f5f5; border-radius:20px; _transition:0.3s;}
+#realChart>li>a:after{content:""; display:block; clear:both;}
+#realChart>li>a>p{float:left; margin-bottom:0; line-height:40px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#realChart>li>a>img{_display:none; position:absolute; top:10px; left:12%; width:100px; height:100px; border-radius:5px; transition:0s; opacity:0;}	
+	.rankNum{width:13.55%; text-align:center; border-radius:20px 0 0 20px; font-size:14px; font-weight:bold;}
+	.rankTit{width:50%; font-size:13px;}
+	.rankAut{width:21%; font-size:11px;}
+	.rankSta{width:15.28%; text-align:center; border-radius:0 20px 20px 0; font-size:12px; font-weight:600;}
+	.rankSta>i{padding-left:3px; font-size:12px; margin-top:12px;}
+	.rankSta.down{color:blue;}
+	.rankSta.up{color:red;}
+	.rankSta.mid{color:grey;}
+
+#realChart>li.on>a{height:120px; background-color:#f5f5f5;}
+#realChart>li.on>a>img{_display:block; opacity:1; transition:0.5s;}
+#realChart>li.on>a>.rankNum{font-size:25px; margin-top:5px;}
+#realChart>li.on>a>.rankTit{position:absolute; width:40%; top:40px; left:50%; line-height:20px; font-size:16px; font-weight:bold;}
+#realChart>li.on>a>.rankAut{position:absolute; width:40%; top:60px; left:50%; line-height:20px; font-size:12px;}
+#realChart>li.on>a>.rankSta{float:right;}
+
+/*-------------------------------
+-----------메인 로그인------------
+-------------------------------*/
+
+
+/*-------------------------------
+------------메인 서치-------------
+-------------------------------*/
+#search_box{position:relative; width:100%; background:#fff; border-radius:25px;}
+#search_box:after{content:""; display:block; clear:both;}
+#search_box>form{position:absolute; width:100%;}
+
+#search_box>div{position:absolute; right:0; width:50px; height:50px; border-radius:25px; _background-color:#f5f5f5; text-align:center;}
+#search_box>form>input{width:100%; height:50px; border:1px solid #ddd; border-radius:25px; box-sizing:border-box;}
+	#search_btn{background-color:red;}
+
+#login_btn{height:50px; border:1px solid #ddd; border-radius:25px;}
+#purchase_btn{height:50px; border:1px solid #ddd; border-radius:25px;}
+/*-------------------------------
+------------메인 구매-------------
+-------------------------------*/
+
+/*--------------------------------------
+------------최신 뮤직 페이지-------------
+--------------------------------------*/
+#new_song{height:335px; overflow:hidden;}
+#new_song>h4{}
+#new_song>ul{height:280px; width:calc(100% + 33px); overflow-y:scroll;  box-shadow: -10px -2px 15px -3px rgba(0,0,0,0.5) inset; border-radius:20px;}
+#new_song>ul>li{position:relative; height:50px; _border:1px solid #ddd; _overflow:hidden;}
+#new_song>ul>li:hover{background-color:#f5f5f5;}
+#new_song>ul>li:nth-of-type(n+2){border-top:1px solid #ddd;}
+#new_song>ul>li>div{width:5%; margin-top:18px;}
+#new_song>ul>li>div>label{margin:0 auto;}
+#new_song>ul>li>img{display:inline-block; width:40px; margin-top:5px;}
+#new_song>ul>li>span{display:inline-block; font-size:14px;}	
+	.song_tit{width:35%; line-height:50px; padding-left:5%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+	.song_aut{width:15%; line-height:50px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+	.song_alb{width:15%; line-height:50px; margin-left:2%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#new_song>ul>li>a{width:8%; font-size:14px; line-height:50px;}
+#new_song>ul>li>a>i{line-height:50px;}
+#new_song>ul>li>a+a{margin-left:10px;}
+#new_song>ul>li>a>span{font-size:12px !important;}
+
+#new_album{}
+#new_album>h4{}
+#new_album>div{position:relative; width:100%; height:180px; overflow:hidden;}
+#new_album>div>div{position:absolute; width:20px; height:180px; background:#fff; z-index:30; cursor:pointer; text-align:center;}
+#new_album>div>div>div{background:#f5f5f5}
+#new_album>div>div>div>i{line-height:170px;}
+#new_album>div>ul{position:absolute; width:1395px; top:0; height:180px; left:25px; overflow:hidden;}
+#new_album>div>ul:after{content:""; display:block; clear:both;}
+#new_album>div>ul>li{position:relative; float:left; width:170px; height:170px; cursor:pointer; box-shadow:0px 3px 15px -5px rgba(0,0,0,0.5);}
+#new_album>div>ul>li>img{display:block; position:absolute; top:0; left:0; width:100%; height:100%;}
+#new_album>div>ul>li+li{margin-left:5px;}
+
+#new_album>div>ul>li>div{position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.5); opacity:0; transition:0.5s; z-index:10}
+#new_album>div>ul>li:hover>div{opacity:1;}
+#new_album>div>ul>li>div>p{color:#f5f5f5; font-weight:bold; text-align:center;}
+#new_album>div>ul>li>div>p:nth-of-type(1){font-size:15px;  padding-top:50px;}
+#new_album>div>ul>li>div>p:nth-of-type(2){font-size:12px; padding-top:40px;}
+#new_album>div>ul>li>div>p:nth-of-type(3){font-size:11px;}
+	#right_btn{right:0;}
+	#left_btn{left:0;}
+	#right_btn>div{border-radius:0 20px 20px 0;}
+	#left_btn>div{border-radius:20px 0 0 20px;}
+
+
+
+
+#tab_contents{border:1px solid #ddd; border-width:0 1px 1px 1px;}
+
+
+/*#new_album>div>ul>li:nth-of-type(1){ background:url(../images/new/album01.jpg) no-repeat; background-size:cover;}
+#new_album>div>ul>li:nth-of-type(2){ background:url(../images/new/album02.jpg) no-repeat; background-size:cover;}
+#new_album>div>ul>li:nth-of-type(3){ background:url(../images/new/album03.jpg) no-repeat; background-size:cover;}
+#new_album>div>ul>li:nth-of-type(4){ background:url(../images/new/album04.jpg) no-repeat; background-size:cover;}*/
+
+/*--------------------------------------
+------------장르 뮤직 페이지-------------
+--------------------------------------*/
+/*white-space:nowrap; overflow:hidden; text-overflow:ellipsis;*/
+
