@@ -3,7 +3,7 @@
 *{vertical-align:top;}
 body{font-family: 'Noto Sans KR', sans-serif;}
 p{margin-bottom:0;}
-
+span.bold{font-weight:bold;}
 
 /*------------------------------
 -----------해더 디자인-----------
@@ -60,9 +60,9 @@ p{margin-bottom:0;}
 /*--------------------------------------
 ------------최신 뮤직 페이지-------------
 --------------------------------------*/
-#new_song{height:335px; overflow:hidden;}
+#new_song{height:280px; overflow:hidden; border:1px solid #ddd; border-radius:20px;}
 #new_song>h4{}
-#new_song>ul{height:280px; width:calc(100% + 33px); overflow-y:scroll;  box-shadow: -10px -2px 15px -3px rgba(0,0,0,0.5) inset; border-radius:20px;}
+#new_song>ul{height:280px; width:calc(100% + 33px); overflow-y:scroll;  box-shadow: -10px -2px 15px -3px rgba(0,0,0,0.5) inset;}
 #new_song>ul>li{position:relative; height:50px; _border:1px solid #ddd; _overflow:hidden;}
 #new_song>ul>li:hover{background-color:#f5f5f5;}
 #new_song>ul>li:nth-of-type(n+2){border-top:1px solid #ddd;}
@@ -90,7 +90,7 @@ p{margin-bottom:0;}
 #new_album>div>ul>li>img{display:block; position:absolute; top:0; left:0; width:100%; height:100%;}
 #new_album>div>ul>li+li{margin-left:5px;}
 
-#new_album>div>ul>li>div{position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.5); opacity:0; transition:0.5s; z-index:10}
+#new_album>div>ul>li>div{position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.8); opacity:0; transition:0.5s; z-index:10}
 #new_album>div>ul>li:hover>div{opacity:1;}
 #new_album>div>ul>li>div>p{color:#f5f5f5; font-weight:bold; text-align:center;}
 #new_album>div>ul>li>div>p:nth-of-type(1){font-size:15px;  padding-top:50px;}
@@ -102,18 +102,25 @@ p{margin-bottom:0;}
 	#left_btn>div{border-radius:20px 0 0 20px;}
 
 
-
-
-#tab_contents{border:1px solid #ddd; border-width:0 1px 1px 1px;}
-
-
-/*#new_album>div>ul>li:nth-of-type(1){ background:url(../images/new/album01.jpg) no-repeat; background-size:cover;}
-#new_album>div>ul>li:nth-of-type(2){ background:url(../images/new/album02.jpg) no-repeat; background-size:cover;}
-#new_album>div>ul>li:nth-of-type(3){ background:url(../images/new/album03.jpg) no-repeat; background-size:cover;}
-#new_album>div>ul>li:nth-of-type(4){ background:url(../images/new/album04.jpg) no-repeat; background-size:cover;}*/
-
 /*--------------------------------------
 ------------장르 뮤직 페이지-------------
 --------------------------------------*/
-/*white-space:nowrap; overflow:hidden; text-overflow:ellipsis;*/
+#tab_contents{border:1px solid #ddd; border-width:0 1px 1px 1px;}
+#tab_contents>div{}
+#tab_contents>div>ul{column-count:4;}
+#tab_contents>div>ul:after{content:""; display:block; clear:both;} 
+#tab_contents>div>ul>li{float:left; _width:300px;}
+#tab_contents>div>ul>li>img{}
+#tab_contents>div>ul>li>div{}
+#tab_contents>div>ul>li>div>h5{line-height:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#tab_contents>div>ul>li>div>p{font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#tab_contents>div>ul>li>div>p:nth-of-type(1){}
+#tab_contents>div>ul>li>div>p:nth-of-type(2){}
+#tab_contents>div>ul>li>div>p:nth-of-type(3){}
+#tab_contents>div>ul>li>div>p:nth-of-type(4){}
+#tab_contents>div>ul>li>div>p:nth-of-type(5){}
 
+#tab_contents>div>ul>li>div>a{display:inline-block; margin-top:15px;}
+#tab_contents>div>ul>li>div>a:nth-of-type(1){font-size:14px;}
+#tab_contents>div>ul>li>div>a:nth-of-type(2){}
+#tab_contents>div>ul>li>div>a:nth-of-type(3){}
