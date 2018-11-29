@@ -17,21 +17,19 @@
 <body>
 	<header class="container mt-5">
 		<div class="row">
-			<div class="col-md-12 col-lg-3 p-0"><a href="#"><img src="./images/logo.png" alt="logo" id="logo"></a></div>
-			<div class="col-md-12 col-lg-9 p-0">
-				<div class="col-sm-8 col-md-8 col-lg-5">
-					<div id="search_box">
-						<form action="get">
-							<input type="text">
-						</form>
-						<div class="btn" id="search_btn">검색</div>
-					</div>
+			<div class="col-md-12 col-lg-3 p-0" id="header_logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></div>
+			<div class="col-md-12 col-lg-9 p-0" id="header_menu">
+				<div>
+					<div class="btn" id="purchase_btn"><i class="fas fa-ticket-alt"></i>이용권 구매</div>
 				</div>
-				<div class="col-sm-2 col-md-2 col-lg-2">
-					<div class="btn" id="login_btn">login</div>			
+				<div>
+					<div class="btn" id="login_btn"><i class="fas fa-power-off"></i></div>			
 				</div>
-				<div class="col-sm-2 col-md-2 col-lg-2">
-					<div class="btn" id="purchase_btn">purchase</div>
+				<div id="search_box">
+					<form action="get">
+						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
+					</form>					
+					<div class="btn" id="search_btn"><i class="fas fa-search"></i></div>
 				</div>
 			</div>
 		</div>

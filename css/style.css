@@ -4,12 +4,36 @@
 body{font-family: 'Noto Sans KR', sans-serif;}
 p{margin-bottom:0;}
 span.bold{font-weight:bold;}
-h5{text-align: center;}
+h5{text-align:center;}
+.btn{padding:0;}
+header{z-index:100;}
 
 /*------------------------------
 -----------해더 디자인-----------
 ------------------------------*/
-#logo{display:block; width:120px;}
+#header_logo>a{display:block; width:140px; margin:0 auto;}
+#header_logo>a>img{display:block; width:100%;}
+#header_menu{}
+#header_menu:after{content:""; display:block; clear:both;}
+#header_menu>div{float:right;}
+#header_menu>div:hover>div{background-color:#f5f5f5; color:#333; }
+#header_menu>div+div{margin-right:20px;}
+#header_menu>div>div{line-height:40px; border:1px solid #ddd; border-radius:25px;}
+#header_menu>div>div>i{line-height:40px;}
+
+/*----------메인 서치-----------*/
+	#search_box{position:relative; background:#fff; border-radius:25px;}
+
+	#search_box>form{position:absolute; right:0; width:50px; height:50px; border:1px solid #ddd; border-radius:25px; overflow:hidden; box-sizing:border-box; padding-left:0; padding-right:0;}
+	#search_box>form>input{border:none; width:100%; height:30px; margin-top:10px; font-size:14px;}
+
+	#search_box>div{_display:none; position:absolute; right:0; width:50px; height:50px; border-radius:25px; text-align:center;}
+	#search_btn{background-color:#fff;}
+/*---------메인 로그인----------*/
+	#login_btn{width:100px; background-color:#fff;}
+
+/*----------메인 구매-----------*/
+	#purchase_btn{width:130px;}
 
 /*------------------------------
 --------실시간차트 디자인--------
@@ -52,27 +76,6 @@ h5{text-align: center;}
 	.rankSta_sm.down{color:blue;}
 	.rankSta_sm.up{color:red;}
 	.rankSta_sm.mid{color:grey;}
-/*-------------------------------
------------메인 로그인------------
--------------------------------*/
-
-
-/*-------------------------------
-------------메인 서치-------------
--------------------------------*/
-#search_box{position:relative; width:100%; background:#fff; border-radius:25px;}
-#search_box:after{content:""; display:block; clear:both;}
-#search_box>form{position:absolute; width:100%;}
-
-#search_box>div{position:absolute; right:0; width:50px; height:50px; border-radius:25px; _background-color:#f5f5f5; text-align:center;}
-#search_box>form>input{width:100%; height:50px; border:1px solid #ddd; border-radius:25px; box-sizing:border-box;}
-	#search_btn{background-color:red;}
-
-#login_btn{height:50px; border:1px solid #ddd; border-radius:25px;}
-#purchase_btn{height:50px; border:1px solid #ddd; border-radius:25px;}
-/*-------------------------------
-------------메인 구매-------------
--------------------------------*/
 
 /*--------------------------------------
 ------------최신 뮤직 페이지-------------
@@ -150,30 +153,47 @@ h5{text-align: center;}
 /*--------------------------------------
 ------------미디어 CSS 페이지------------
 --------------------------------------*/
-@media (min-width: 768px){
-	#genre_tab>ul>li>a{font-weight:bold; font-size:16px;}
-	#tab_contents>div>ul{column-count:4;}
+
+@media (min-width: 992px){
 	h5{text-align:left;}
-	#new_song>ul>li>a:nth-of-type(1){_margin-left:3%;}
+	
+	#genre_tab>ul>li>a{font-weight:bold; font-size:16px;}
+	#tab_contents>div>ul{column-count:4;}	
+	#header_logo>a{margin:0;}
 }
+
+@media (min-width: 768px) and (max-width: 991px){
+	h5{text-align:left;}
+	
+	#genre_tab>ul>li>a{font-weight:bold; font-size:16px;}
+	#tab_contents>div>ul{column-count:4;}	
+}
+
 @media (min-width: 576px) and (max-width: 767px){
 	.container{max-width:95%;}
 	.song_tit{width:35%;}
 	.song_aut{width:13%;}
 	.song_alb{width:13%;}
 }
+
 @media (min-width:500px) and (max-width: 575px){
+	.container{max-width:95%;}
 	.song_tit{width:40%;}
 	.song_aut{width:20%;}
 	.song_alb{display:none !important;}
 }
+
 @media (max-width:499px){
-	#genre_tab>ul>li>a{font-weight:bold; font-size:11px;}
-	.song_tit{width:30%; padding-left:0;}
+	.container{max-width:95%;}
+	.song_tit{width:40%; padding-left:0;}
+	.song_aut{width:20%;}
+	.song_alb{display:none !important;}
 	#new_song>ul>li>img{display:none;}
+	#genre_tab>ul>li>a{font-weight:bold; font-size:12px;}
 	
 	#new_song{height:200px;}
 	#new_song>ul{height:200px;}
-	.card-body{padding: 5px 1rem;}
+
 	#tab_contents>div>ul>li>div>a{margin-top:10px;}
+	.card-body{padding: 5px 1rem;}
 }

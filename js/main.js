@@ -14,6 +14,21 @@ $(function(){
 	});
 
 	//-------------------------------------------
+	//-------------서치버튼 스크립트--------------
+	//-------------------------------------------
+	var btnState = true;
+	$("#search_btn").click(function(){
+		if(btnState){
+			$("#search_box>form").animate({width:350,paddingLeft:20,paddingRight:60},500,"easeOutSine");
+			btnState = false;
+			$("#search_box>form>input").focus();
+		}else{
+			$("#search_box>form").animate({width:50,paddingLeft:0,paddingRight:0},500,"easeOutSine");
+			btnState = true;
+		}
+	})
+
+	//-------------------------------------------
 	//-----------최신곡 그림자 스크립트------------
 	//-------------------------------------------
 	$("#new_song>ul").scroll(function(){
