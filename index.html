@@ -15,28 +15,94 @@
 	<script src="./js/main.js"></script>
 </head>
 <body>
-	<div class="container mt-5">
+	<header class="container mt-5">
 		<div class="row">
-			<div class="col-sm-12 col-md-12 col-lg-3 p-0"><a href="#"><img src="./images/logo.png" alt="logo" id="logo"></a></div>
-			<div class="col-sm-8 col-md-8 col-lg-5">
-				<div id="search_box">
-					<form action="get">
-						<input type="text">
-					</form>
-					<div class="btn" id="search_btn">검색</div>
+			<div class="col-md-12 col-lg-3 p-0"><a href="#"><img src="./images/logo.png" alt="logo" id="logo"></a></div>
+			<div class="col-md-12 col-lg-9 p-0">
+				<div class="col-sm-8 col-md-8 col-lg-5">
+					<div id="search_box">
+						<form action="get">
+							<input type="text">
+						</form>
+						<div class="btn" id="search_btn">검색</div>
+					</div>
+				</div>
+				<div class="col-sm-2 col-md-2 col-lg-2">
+					<div class="btn" id="login_btn">login</div>			
+				</div>
+				<div class="col-sm-2 col-md-2 col-lg-2">
+					<div class="btn" id="purchase_btn">purchase</div>
 				</div>
 			</div>
-			<div class="col-sm-2 col-md-2 col-lg-2">
-				<div class="btn" id="login_btn">login</div>			
-			</div>
-			<div class="col-sm-2 col-md-2 col-lg-2">
-				<div class="btn" id="purchase_btn">purchase</div>
-			</div>
 		</div>
-	</div>
-	<div class="container mt-5">
+	</header>
+	<section class="container mt-5">
 		<div class="row">
-			<div class="col-sm-12 col-md-12 col-lg-8 p-0 pr-0 pr-lg-3">
+			<div class="col-sm-12 d-lg-none p-0" id="real_chart_sm">
+				<ul>
+					<li>
+						<p class="rankNum_sm">1위</p>
+						<p class="rankTit_sm">이 밤이 특별해진 건</p>
+						<p class="rankAut_sm">어반 자카파(Urban Zakapa)</p>
+						<p class="rankSta_sm up">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">2위</p>
+						<p class="rankTit_sm">아낙네</p>
+						<p class="rankAut_sm">MINO(송민호)</p>
+						<p class="rankSta_sm down">1</p>
+						</li>
+					<li>
+						<p class="rankNum_sm">3위</p>
+						<p class="rankTit_sm">눈이 내린다</p>
+						<p class="rankAut_sm">지오디(GOD)</p>
+						<p class="rankSta_sm none"></p>
+					</li>
+					<li>
+						<p class="rankNum_sm">4위</p>
+						<p class="rankTit_sm">SOLO</p>
+						<p class="rankAut_sm">제니(JENNIE)</p>
+						<p class="rankSta_sm up">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">5위</p>
+						<p class="rankTit_sm">그대가 내 안에 박혔다</p>
+						<p class="rankAut_sm">황치열</p>
+						<p class="rankSta_sm down">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">6위</p>
+						<p class="rankTit_sm">알러뷰</p>
+						<p class="rankAut_sm">EXID</p>
+						<p class="rankSta_sm none">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">7위</p>
+						<p class="rankTit_sm">YES or YES</p>
+						<p class="rankAut_sm">TWICE(트와이스)</p>
+						<p class="rankSta_sm none">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">8위</p>
+						<p class="rankTit_sm">thank u, next</p>
+						<p class="rankAut_sm">Ariana Grande(아리아나 그란데)</p>
+						<p class="rankSta_sm none">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">9위</p>
+						<p class="rankTit_sm">너를 만나</p>
+						<p class="rankAut_sm">폴킴(Pual Kim)</p>
+						<p class="rankSta_sm none">1</p>
+					</li>
+					<li>
+						<p class="rankNum_sm">10위</p>
+						<p class="rankTit_sm">찾아가세요</p>
+						<p class="rankAut_sm">러블리즈(Lovelyz)</p>
+						<p class="rankSta_sm none sm">1</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-8 p-0 pr-0 pr-lg-3 mt-3 mt-lg-0">
 				<h5>최신곡</h5>
 				<div class="p-0" id="new_song">
 					<ul>
@@ -326,9 +392,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-4 col-lg-4 d-md-none d-lg-block p-0">
+			<div class="col-sm-12 col-md-4 col-lg-4 d-none d-lg-block p-0">
 				<h5>실시간 차트</h5>
-				<ul id="realChart">
+				<ul id="real_chart">
 					<li class="on">
 						<a href="#">
 							<p class="rankNum">1</p>
@@ -422,8 +488,9 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="container p-0 mt-5">
+	</section>
+	<section class="container p-0 mt-5 mb-5" id="genre_tab">
+		<h5>장르 음악</h5>
 		<ul class="nav nav-tabs nav-justified">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#ballad">발라드</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rap">랩/힙합</a></li>
@@ -438,7 +505,7 @@
 					<li class="card">
 						<img src="./images/genre/ballad01.jpg" alt="ballad01" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">이 밤이 특별해진 건</span></h5>
+							<h6 class="card-title"><span class="bold">이 밤이 특별해진 건</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜어반 자카파(Urban Zakapa)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜조현아</p>
 							<p class="card-text"><span class="bold">작사</span>｜조현아</p>
@@ -452,7 +519,7 @@
 					<li class="card">
 						<img src="./images/genre/ballad02.jpg" alt="ballad02" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">SOLO</span></h5>
+							<h6 class="card-title"><span class="bold">SOLO</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜제니니(JENNIE)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜TEDDY,24</p>
 							<p class="card-text"><span class="bold">작사</span>｜TEDDY</p>
@@ -466,7 +533,7 @@
 					<li class="card">
 						<img src="./images/genre/ballad03.jpg" alt="ballad03" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">잘 지내요(라이프 OST)</span></h5>
+							<h6 class="card-title"><span class="bold">잘 지내요(라이프 OST)</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜정승환</p>
 							<p class="card-text"><span class="bold">작곡</span>｜이진아</p>
 							<p class="card-text"><span class="bold">작사</span>｜정승환</p>
@@ -480,7 +547,7 @@
 					<li class="card">
 						<img src="./images/genre/ballad04.jpg" alt="ballad04" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">가을 타나 봐</span></h5>
+							<h6 class="card-title"><span class="bold">가을 타나 봐</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜바이브(Vibe)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜류재현</p>
 							<p class="card-text"><span class="bold">작사</span>｜류재현,민연재</p>
@@ -498,7 +565,7 @@
 					<li class="card">
 						<img src="./images/genre/rap01.jpg" alt="rap01" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">아낙네</span></h5>
+							<h6 class="card-title"><span class="bold">아낙네</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜MINO(송민호)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜MINO(송민호),FUTURE BOUNCE,TEXU</p>
 							<p class="card-text"><span class="bold">작사</span>｜MINO(송민호)</p>
@@ -512,7 +579,7 @@
 					<li class="card">
 						<img src="./images/genre/rap02.jpg" alt="rap02" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">소년점프</span></h5>
+							<h6 class="card-title"><span class="bold">소년점프</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜마미손</p>
 							<p class="card-text"><span class="bold">작곡</span>｜매드클라운,Ye-Yo!</p>
 							<p class="card-text"><span class="bold">작사</span>｜매드클라운</p>
@@ -526,7 +593,7 @@
 					<li class="card">
 						<img src="./images/genre/rap03.jpg" alt="rap03" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">flex(Prod.By 기리보이)</span></h5>
+							<h6 class="card-title"><span class="bold">flex(Prod.By 기리보이)</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜기리보이,Kid Milli,NO:EL,스윙스</p>
 							<p class="card-text"><span class="bold">작곡</span>｜기리보이</p>
 							<p class="card-text"><span class="bold">작사</span>｜기리보이,Kid Milli,NO:EL,스윙스</p>
@@ -540,7 +607,7 @@
 					<li class="card">
 						<img src="./images/genre/rap04.jpg" alt="rap04" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">북향(Feat.오혁)</span></h5>
+							<h6 class="card-title"><span class="bold">북향(Feat.오혁)</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜다이나믹 듀오(Dynamic Duo)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜Gaeko,Padi,Vendy</p>
 							<p class="card-text"><span class="bold">작사</span>｜Gaeko,Choiza</p>
@@ -558,7 +625,7 @@
 					<li class="card">
 						<img src="./images/genre/soul01.jpg" alt="soul01" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">삐삐</span></h5>
+							<h6 class="card-title"><span class="bold">삐삐</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜아이유(IU)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜이종훈</p>
 							<p class="card-text"><span class="bold">작사</span>｜아이유(IU)</p>
@@ -572,7 +639,7 @@
 					<li class="card">
 						<img src="./images/genre/soul02.jpg" alt="soul02" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">센 척 안 해(Feat.Crush)</span></h5>
+							<h6 class="card-title"><span class="bold">센 척 안 해(Feat.Crush)</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜키(KEY)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜Noah Conrad,Jake Torrey,Riley Thomas Donnell,Daniel Doron Henig,Adrian McKinnon</p>
 							<p class="card-text"><span class="bold">작사</span>｜캔지(Kenzie)</p>
@@ -586,7 +653,7 @@
 					<li class="card">
 						<img src="./images/genre/soul03.jpg" alt="soul03" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">하루살이(feat.설리,Rad Museum)</span></h5>
+							<h6 class="card-title"><span class="bold">하루살이(feat.설리,Rad Museum)</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜DEAN(딘)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜DEAN(딘),2xxx!,marldn,Rad Museum,No Identity(노 아이덴티티)</p>
 							<p class="card-text"><span class="bold">작사</span>｜DEAN(딘),Rad Museum,marldn</p>
@@ -600,7 +667,7 @@
 					<li class="card">
 						<img src="./images/genre/soul04.jpg" alt="soul04" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">백년해로</span></h5>
+							<h6 class="card-title"><span class="bold">백년해로</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜선우정아(Sunwoojunga)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜선우정아(Sunwoojunga)</p>
 							<p class="card-text"><span class="bold">작사</span>｜선우정아(Sunwoojunga)</p>
@@ -618,7 +685,7 @@
 					<li class="card">
 						<img src="./images/genre/indie01.jpg" alt="indie01" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">매트리스</span></h5>
+							<h6 class="card-title"><span class="bold">매트리스</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜10cm(십센치)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜10cm(십센치)</p>
 							<p class="card-text"><span class="bold">작사</span>｜10cm(십센치)</p>
@@ -632,7 +699,7 @@
 					<li class="card">
 						<img src="./images/genre/indie02.jpg" alt="indie02" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">동화</span></h5>
+							<h6 class="card-title"><span class="bold">동화</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜멜로망스(MeloMance)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜멜로망스(MeloMance)</p>
 							<p class="card-text"><span class="bold">작사</span>｜김민석</p>
@@ -646,7 +713,7 @@
 					<li class="card">
 						<img src="./images/genre/indie03.jpg" alt="indie03" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">새벽☆</span></h5>
+							<h6 class="card-title"><span class="bold">새벽☆</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜새벽공방</p>
 							<p class="card-text"><span class="bold">작곡</span>｜여운,희연</p>
 							<p class="card-text"><span class="bold">작사</span>｜희연</p>
@@ -660,7 +727,7 @@
 					<li class="card">
 						<img src="./images/genre/indie04.jpg" alt="indie04" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">사랑한다는 말로는</span></h5>
+							<h6 class="card-title"><span class="bold">사랑한다는 말로는</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜피아노맨</p>
 							<p class="card-text"><span class="bold">작곡</span>｜숀(SHAUN)</p>
 							<p class="card-text"><span class="bold">작사</span>｜Mr.Black</p>
@@ -678,7 +745,7 @@
 					<li class="card">
 						<img src="./images/genre/rock01.jpg" alt="rock01" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">그건 니 생각이고</span></h5>
+							<h6 class="card-title"><span class="bold">그건 니 생각이고</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜장기하와 얼굴들</p>
 							<p class="card-text"><span class="bold">작곡</span>｜장기하</p>
 							<p class="card-text"><span class="bold">작사</span>｜장기하</p>
@@ -692,7 +759,7 @@
 					<li class="card">
 						<img src="./images/genre/rock02.jpg" alt="rock02" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">TOMBOY</span></h5>
+							<h6 class="card-title"><span class="bold">TOMBOY</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜혁오(HYUKOH)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜카더가든(Car,the garden),오혁(OhHyuk)</p>
 							<p class="card-text"><span class="bold">작사</span>｜오혁(OhHyuk)</p>
@@ -706,7 +773,7 @@
 					<li class="card">
 						<img src="./images/genre/rock03.jpg" alt="rock03" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">있지</span></h5>
+							<h6 class="card-title"><span class="bold">있지</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜자우림(Jaurim)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜김윤아</p>
 							<p class="card-text"><span class="bold">작사</span>｜김윤아</p>
@@ -720,7 +787,7 @@
 					<li class="card">
 						<img src="./images/genre/rock04.jpg" alt="rock04" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">No One Told Me Why</span></h5>
+							<h6 class="card-title"><span class="bold">No One Told Me Why</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜알레프(ALEPH)</p>
 							<p class="card-text"><span class="bold">작곡</span>｜알레프(ALEPH)</p>
 							<p class="card-text"><span class="bold">작사</span>｜알레프(ALEPH)</p>
@@ -738,7 +805,7 @@
 					<li class="card">
 						<img src="./images/genre/trot01.jpg" alt="trot01" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">잘가라</span></h5>
+							<h6 class="card-title"><span class="bold">잘가라</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜홍진영</p>
 							<p class="card-text"><span class="bold">작곡</span>｜조영수</p>
 							<p class="card-text"><span class="bold">작사</span>｜김이나</p>
@@ -752,7 +819,7 @@
 					<li class="card">
 						<img src="./images/genre/trot02.jpg" alt="trot02" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">아모르 파티</span></h5>
+							<h6 class="card-title"><span class="bold">아모르 파티</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜김연자</p>
 							<p class="card-text"><span class="bold">작곡</span>｜윤일상</p>
 							<p class="card-text"><span class="bold">작사</span>｜신철,이건우</p>
@@ -766,7 +833,7 @@
 					<li class="card">
 						<img src="./images/genre/trot03.jpg" alt="trot03" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">거짓말</span></h5>
+							<h6 class="card-title"><span class="bold">거짓말</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜조항조</p>
 							<p class="card-text"><span class="bold">작곡</span>｜김진룡</p>
 							<p class="card-text"><span class="bold">작사</span>｜김진룡</p>
@@ -780,7 +847,7 @@
 					<li class="card">
 						<img src="./images/genre/trot04.jpg" alt="trot04" class="card-img-top">
 						<div class="card-body">
-							<h5 class="card-title"><span class="bold">보약같은 친구</span></h5>
+							<h6 class="card-title"><span class="bold">보약같은 친구</span></h6>
 							<p class="card-text"><span class="bold">아티스트</span>｜진시몬</p>
 							<p class="card-text"><span class="bold">작곡</span>｜진시몬</p>
 							<p class="card-text"><span class="bold">작사</span>｜진시몬</p>
@@ -794,9 +861,9 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div class="container p-0 mt-5">
-		
-	</div>
+	</section>
+	<!-- <div class="container p-0 mt-5">
+		포스트 페이지 나중에 추가예정
+	</div> -->
 </body>
 </html>
