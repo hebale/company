@@ -5,6 +5,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 p{margin-bottom:0;}
 span.bold{font-weight:bold;}
 
+
 /*------------------------------
 -----------해더 디자인-----------
 ------------------------------*/
@@ -66,17 +67,16 @@ span.bold{font-weight:bold;}
 #new_song>ul>li{position:relative; height:50px; _border:1px solid #ddd; _overflow:hidden;}
 #new_song>ul>li:hover{background-color:#f5f5f5;}
 #new_song>ul>li:nth-of-type(n+2){border-top:1px solid #ddd;}
-#new_song>ul>li>div{width:5%; margin-top:18px;}
+#new_song>ul>li>div{width:6%; margin-top:18px; padding-left:1%; box-sizing:border-box;}
 #new_song>ul>li>div>label{margin:0 auto;}
 #new_song>ul>li>img{display:inline-block; width:40px; margin-top:5px;}
-#new_song>ul>li>span{display:inline-block; font-size:14px;}	
+#new_song>ul>li>span{display:inline-block; font-size:14px;}
 	.song_tit{width:35%; line-height:50px; padding-left:5%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 	.song_aut{width:15%; line-height:50px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 	.song_alb{width:15%; line-height:50px; margin-left:2%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-#new_song>ul>li>a{width:8%; font-size:14px; line-height:50px;}
+#new_song>ul>li>a{width:5%; font-size:12px; line-height:50px;}
 #new_song>ul>li>a>i{line-height:50px;}
-#new_song>ul>li>a+a{margin-left:10px;}
-#new_song>ul>li>a>span{font-size:12px !important;}
+#new_song>ul>li>a+a{margin-left:2%;}
 
 #new_album{}
 #new_album>h4{}
@@ -124,3 +124,29 @@ span.bold{font-weight:bold;}
 #tab_contents>div>ul>li>div>a:nth-of-type(1){font-size:14px;}
 #tab_contents>div>ul>li>div>a:nth-of-type(2){}
 #tab_contents>div>ul>li>div>a:nth-of-type(3){}
+
+
+/*--------------------------------------
+------------미디어 CSS 페이지------------
+--------------------------------------*/
+@media (min-width: 768px) and (max-width: 991px){
+	#new_song>ul>li>a:nth-of-type(1){_margin-left:3%;}
+}
+@media (min-width: 576px) and (max-width: 767px){
+	.container{max-width:95%;}
+	.song_tit{width:35%;}
+	.song_aut{width:13%;}
+	.song_alb{width:13%;}
+}
+@media (min-width:500px) and (max-width: 575px){
+	.song_tit{width:40%;}
+	.song_aut{width:20%;}
+	.song_alb{display:none !important;}
+}
+@media (max-width:499px){
+	.song_tit{width:30%; padding-left:0;}
+	#new_song>ul>li>img{display:none;}
+	
+	#new_song{height:200px;}
+	#new_song>ul{height:200px;}
+}
