@@ -2,7 +2,6 @@ $(function(){
 	chartNum();		//실시간 차트 상승하강 아이콘 삽입값
 
 	moveChart();	//실시간 차트 스몰 차트 움직임
-	chartNumSm();	//실시간 차트 스몰 상승하강 아이콘 삽입값
 
 	$("#real_chart>li").on("mouseenter",function(){
 		$("#real_chart>li").removeClass("on");
@@ -12,6 +11,37 @@ $(function(){
 	$("#real_chart_sm>li").on("click",function(){
 		
 	});
+	//-----------------------------------------------
+	//-------------스크롤 이벤트 스크립트--------------
+	//-----------------------------------------------
+	var listInd = 1;
+
+	$(window).scroll(function(){
+		
+		var scrollTop = $(window).scrollTop();
+		// var ulLIst = $("#real_chart_page").height() / 30;
+		var ulList = ($(document).height() - $(window).height()) / 30;
+		var listInd = parseInt(scrollTop / ulList);
+
+		//console.log(scrollTop);
+		//console.log(ulList);
+		console.log(listInd);
+		if(listInd > 29) return;
+
+		$("#real_chart_page>li").removeClass();
+		$("#real_chart_page>li").eq(listInd).addClass("on");
+		$("#real_chart_page>li").eq(listInd).prev().addClass("around");
+		$("#real_chart_page>li").eq(listInd).next().addClass("around");
+
+		// if((ulLIst * listInd) < scrollTop){
+		// 	$("#real_chart_page>li").removeClass();
+		// 	$("#real_chart_page>li").eq(listInd).addClass("on");
+		// 	$("#real_chart_page>li").eq(listInd).prev().addClass("prev");
+		// 	$("#real_chart_page>li").eq(listInd).next().addClass("next");
+		// 	listInd++
+		// }
+
+	})	
 
 	//-------------------------------------------
 	//-------------서치버튼 스크립트--------------
@@ -19,11 +49,11 @@ $(function(){
 	var btnState = true;
 	$("#search_btn").click(function(){
 		if(btnState){
-			$("#search_box>form").animate({width:350,paddingLeft:20,paddingRight:60},500,"easeOutSine");
+			$("#search_box>form").animate({width:350,paddingLeft:20,paddingRight:70},500,"easeOutSine");
 			btnState = false;
 			$("#search_box>form>input").focus();
 		}else{
-			$("#search_box>form").animate({width:50,paddingLeft:0,paddingRight:0},500,"easeOutSine");
+			$("#search_box>form").animate({width:40,paddingLeft:0,paddingRight:0},500,"easeOutSine");
 			btnState = true;
 		}
 	})
@@ -78,36 +108,19 @@ function moveChart(){
 }
 
 function chartNum(){
-	var chartUp = $(".rankSta.up").length;
-	var chartNone = $(".rankSta.none").length;
-	var chartDown = $(".rankSta.down").length;
+	var chartUp = $(".up").length;
+	var chartNone = $(".none").length;
+	var chartDown = $(".down").length;
 
 	for(var i =0; i < chartUp; i++){
-		var curUp = $(".rankSta.up").eq(i).html();
-		$(".rankSta.up").eq(i).html(curUp + "<i class='fas fa-caret-up'></i>");
+		var curUp = $(".up").eq(i).html();
+		$(".up").eq(i).html(curUp + "<i class='fas fa-caret-up'></i>");
 	}
 	for(var j =0; j < chartNone; j++){
-		var curNone = $(".rankSta.none").eq(j).html("-");
+		var curNone = $(".none").eq(j).html("-");
 	}
 	for(var k =0; k < chartDown; k++){
-		var curDown = $(".rankSta.down").eq(k).html();
-		$(".rankSta.down").eq(k).html(curDown + "<i class='fas fa-caret-down'></i>");
-	}
-}
-function chartNumSm(){
-	var chartUp = $(".rankSta_sm.up").length;
-	var chartNone = $(".rankSta_sm.none").length;
-	var chartDown = $(".rankSta_sm.down").length;
-
-	for(var i =0; i < chartUp; i++){
-		var curUp = $(".rankSta_sm.up").eq(i).html();
-		$(".rankSta_sm.up").eq(i).html(curUp + "<i class='fas fa-caret-up'></i>");
-	}
-	for(var j =0; j < chartNone; j++){
-		var curNone = $(".rankSta_sm.none").eq(j).html("-");
-	}
-	for(var k =0; k < chartDown; k++){
-		var curDown = $(".rankSta_sm.down").eq(k).html();
-		$(".rankSta_sm.down").eq(k).html(curDown + "<i class='fas fa-caret-down'></i>");
+		var curDown = $(".down").eq(k).html();
+		$(".down").eq(k).html(curDown + "<i class='fas fa-caret-down'></i>");
 	}
 }

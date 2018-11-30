@@ -3,7 +3,8 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
-	<title>Play width me</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Play Width Me</title>
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
@@ -15,17 +16,17 @@
 	<script src="./js/main.js"></script>
 </head>
 <body>
-	<header class="container mt-5">
+	<header class="container mt-3 mt-lg-5">
 		<div class="row">
 			<div class="col-md-12 col-lg-3 p-0" id="header_logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></div>
-			<div class="col-md-12 col-lg-9 p-0" id="header_menu">
+			<div class="col-md-12 col-lg-9 p-0 mt-3 mt-lg-0" id="header_menu">
 				<div>
 					<div class="btn" id="purchase_btn"><i class="fas fa-ticket-alt"></i>이용권 구매</div>
 				</div>
 				<div>
-					<div class="btn" id="login_btn"><i class="fas fa-power-off"></i></div>			
+					<div class="btn" id="login_btn" data-toggle="modal" data-target="#login_modal"><i class="fas fa-power-off"></i></div>			
 				</div>
-				<div id="search_box">
+				<div id="search_box" class="col-sm-12">
 					<form action="get">
 						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
 					</form>					
@@ -33,8 +34,29 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal mt-5 b" id="login_modal">
+		    <div class="modal-dialog">
+		    	<div class="modal-content">
+		        	<div class="modal-header">
+			          <h4 class="modal-title mr-auto ml-auto">LOGIN</h4>
+			        </div>
+			        <!-- Modal body -->
+			        <div class="modal-body">
+			          	<form action="post">
+			          		<input type="text" placeholder="ID">
+			          		<input type="text" placeholder="PASSWARD">
+			          	</form>
+			        </div>
+			        <!-- Modal footer -->
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-success" data-dismiss="modal">LOGIN</button>
+			          <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+			        </div>
+		    	</div>
+		    </div>
+		</div>
 	</header>
-	<section class="container mt-5">
+	<section class="container mt-3 mt-lg-5">
 		<div class="row">
 			<div class="col-sm-12 d-lg-none p-0" id="real_chart_sm">
 				<ul>
@@ -487,9 +509,19 @@
 			</div>
 		</div>
 	</section>
-	<section class="container p-0 mt-5 mb-5" id="genre_tab">
+	<section class="container p-0 mt-3 mb-5" id="genre_tab">
 		<h5>장르 음악</h5>
-		<ul class="nav nav-tabs nav-justified">
+		<div class="container p-0" id="tab_thumb">
+			<ul class="row">
+				<li class="col-4"><a href="#">발라드</a></li>
+				<li class="col-4"><a href="#">랩/힙합</a></li>
+				<li class="col-4"><a href="#">R&B/Soul</a></li>
+				<li class="col-4"><a href="#">인디음악</a></li>
+				<li class="col-4"><a href="#">록/메탈</a></li>
+				<li class="col-4"><a href="#">트로트</a></li>
+			</ul>
+		</div>
+		<ul class="nav nav-tabs nav-justified" id="tab_nav">
 			<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#ballad">발라드</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rap">랩/힙합</a></li>
 			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#soul">R&B/Soul</a></li>
