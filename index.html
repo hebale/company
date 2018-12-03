@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,46 +17,66 @@
 	<script src="./js/main.js"></script>
 </head>
 <body>
-	<header class="container mt-3 mt-lg-5">
+	<div id="header_bar">
+		<div class="container p-0">
+			<div class="row" id="header_gnb">
+				<div class="col-12 col-sm-3 m-0" id="header_logo_wh"><a href="./index.html"><img src="./images/logo_wh.png" alt="header_logo_wh"></a></div>
+				<ul class="col-12 col-sm-9 m-0 pr-auto pl-auto" id="header_menus">						
+					<li><a href="javascript:void(0)" style="text-decoration:line-through">뮤직포스트</a></li>
+					<li><a href="#">장르음악</a></li>					
+					<li><a href="#">최신앨범</a></li>
+					<li><a href="#">최신곡</a></li>
+					<li><a href="./sub/real_chart.html">실시간차트</a></li>
+				</ul>
+			</div>
+			<div id="header_btn"><div><i class="fas fa-bars"></i></div></div>
+		</div>
+	</div>
+	<div class="modal mt-5" id="login_modal">
+	    <div class="modal-dialog">
+	    	<div class="modal-content">
+	        	<div class="modal-header">
+		          <h4 class="modal-title mr-auto ml-auto">LOGIN</h4>
+		        </div>
+		        <!-- Modal body -->
+		        <div class="modal-body">
+		          	<form action="post">
+		          		<input type="text" placeholder="ID">
+		          		<input type="text" placeholder="PASSWARD">
+		          	</form>
+		        </div>
+		        <!-- Modal footer -->
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-success" data-dismiss="modal">LOGIN</button>
+		          <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+		        </div>
+	    	</div>
+	    </div>
+	</div>
+	<header class="container pt-3 pt-lg-4 mb-0 mb-lg-5" id="header">
 		<div class="row">
-			<div class="col-md-12 col-lg-3 p-0" id="header_logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></div>
-			<div class="col-md-12 col-lg-9 p-0 mt-3 mt-lg-0" id="header_menu">
-				<div>
-					<div class="btn" id="purchase_btn"><i class="fas fa-ticket-alt"></i>이용권 구매</div>
-				</div>
-				<div>
-					<div class="btn" id="login_btn" data-toggle="modal" data-target="#login_modal"><i class="fas fa-power-off"></i></div>			
-				</div>
+			<div class="col-12 col-sm-3 p-0 pt-4 pt-sm-2 mt-3 mt-lg-0" id="header_logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></div>
+
+			<!-- <div class="col-sm-12 col-md-7 col-lg-5 p-0 mt-3 mt-lg-0" id="header_search">
 				<div id="search_box" class="col-sm-12">
 					<form action="get">
 						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
 					</form>					
 					<div class="btn" id="search_btn"><i class="fas fa-search"></i></div>
 				</div>
+			</div> -->
+
+			<div class="col-12 col-sm-9 p-0 mt-3 mt-lg-0" id="header_menu">
+				<div>
+					<div class="btn" id="purchase_btn"><i class="fas fa-ticket-alt"></i></div>
+				</div>
+				<div>
+					<div class="btn" id="login_btn" data-toggle="modal" data-target="#login_modal"><i class="fas fa-power-off"></i></div>			
+				</div>
 			</div>
 		</div>
-		<div class="modal mt-5 b" id="login_modal">
-		    <div class="modal-dialog">
-		    	<div class="modal-content">
-		        	<div class="modal-header">
-			          <h4 class="modal-title mr-auto ml-auto">LOGIN</h4>
-			        </div>
-			        <!-- Modal body -->
-			        <div class="modal-body">
-			          	<form action="post">
-			          		<input type="text" placeholder="ID">
-			          		<input type="text" placeholder="PASSWARD">
-			          	</form>
-			        </div>
-			        <!-- Modal footer -->
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-success" data-dismiss="modal">LOGIN</button>
-			          <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
-			        </div>
-		    	</div>
-		    </div>
-		</div>
 	</header>
+<!-------------------------------------헤더 구분선--------------------------------------->
 	<section class="container mt-3 mt-lg-5">
 		<div class="row">
 			<div class="col-sm-12 d-lg-none p-0" id="real_chart_sm">
@@ -123,7 +144,7 @@
 				</ul>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-8 p-0 pr-0 pr-lg-3 mt-3 mt-lg-0">
-				<h5>최신곡</h5>
+				<h5><a href="./sub/new_song.html">최신곡<i class="fas fa-chevron-circle-down"></i></a></h5>
 				<div class="p-0" id="new_song">
 					<ul>
 						<li>
@@ -339,7 +360,7 @@
 					</ul>
 				</div>
 				<div class="p-0 mt-4" id="new_album">
-					<h5>최신 앨범</h5>
+					<h5><a href="#">최신 앨범<i class="fas fa-chevron-circle-down"></i></a></h5>
 					<div>
 						<div id="left_btn"><div><i class="fas fa-angle-left"></i></div></div>
 						<ul>
@@ -413,7 +434,7 @@
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-4 col-lg-4 d-none d-lg-block p-0">
-				<h5>실시간 차트</h5>
+				<h5><a href="./sub/real_chart.html">실시간 차트<i class="fas fa-chevron-circle-down"></i></a></h5>
 				<ul id="real_chart">
 					<li class="on">
 						<a href="#">
@@ -510,7 +531,7 @@
 		</div>
 	</section>
 	<section class="container p-0 mt-3 mb-5" id="genre_tab">
-		<h5>장르 음악</h5>
+		<h5><a href="#">장르 음악<i class="fas fa-chevron-circle-down"></i></a></h5>
 		<div class="container p-0" id="tab_thumb">
 			<ul class="row">
 				<li class="col-4"><a href="#">발라드</a></li>
@@ -895,5 +916,26 @@
 	<!-- <div class="container p-0 mt-5">
 		포스트 페이지 나중에 추가예정
 	</div> -->
+<!-------------------------------------푸터 구분선--------------------------------------->
+	<footer id="footer">
+		<div class="container p-0">
+			<div class="row m-0">
+				<div class="col-12 col-md-5 col-lg-3 pt-4 pb-1 pb-mb-4 m-0">
+					<a href="javascript:void(0)"><img src="./images/logo_wh.png" alt="logo_wh"></a>
+				</div>
+				<div class="col-12 col-md-5 col-lg-9 text-center text-md-left pt-4 pb-4 pl-lg-5 m-0">
+					<ul>
+						<li><a href="javascript:void(0)">회사소개</a></li>
+						<li><a href="javascript:void(0)">이용약관</a></li>
+						<li><a href="javascript:void(0)">개인정보처리방침</a></li>
+						<li><a href="javascript:void(0)">고객센터</a></li>						
+					</ul>
+					<div>
+						<p>COPYRIGHTⓒ 2018. All rights reserved by ㅇㅈㄱ.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

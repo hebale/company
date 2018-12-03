@@ -1,39 +1,61 @@
 @charset "utf-8";
 
-*{vertical-align:top;}
-body{font-family: 'Noto Sans KR', sans-serif;}
+*{vertical-align:top; _box-sizing:border-box;}
+body{font-family: 'Noto Sans KR', sans-serif; background-color:#e5e5e5; color:#333;}
 p{margin-bottom:0;}
 span.bold{font-weight:bold;}
 h5{text-align:center;}
+h5>a>i{margin-top:5px; margin-left:5px; font-size:14px;}
 .btn{padding:0;}
 header{z-index:100;}
+a{text-decoration:none;}
+a:link, a:visited, a{color:#333;}
 
+/*------------------------------
+-----------토글 디자인-----------
+------------------------------*/
+#header_bar{position:fixed; width:100%; z-index:100; background-color:#333;}
+	#header_logo_wh{_position:fixed; width:120px; opacity:0;}
+	#header_logo_wh>a{display:block; width:110px; margin-top:25px;}
+	#header_logo_wh>a>img{width:100%;}
+	#header_menus{opacity:0;}
+	#header_gnb{height:81px; height:0; overflow:hidden;}
+	#header_gnb>ul{width:340px;}
+	#header_gnb>ul:after{content:""; display:block; clear:both;}
+	#header_gnb>ul>li{float:right;}
+	#header_gnb>ul>li+li{margin-right:30px;}
+	#header_gnb>ul>li>a{line-height:30px; color:#f5f5f5; line-height:81px; font-size:14px; font-weight:500; letter-spacing:2px;}
+	#header_btn{position:absolute; width:216px; height:35px; top:80px; top:0; left:50%; margin-left:-108px; background:url(../images/header_bar.png) no-repeat center; background-size:cover;}
+	#header_btn>div{text-align:center; width:46px; margin:0 auto; cursor:pointer;}
+	#header_btn>div>i{color:#f5f5f5; font-size:20px; line-height:35px;}
 /*------------------------------
 -----------해더 디자인-----------
 ------------------------------*/
-#header_logo>a{display:block; width:140px; margin:0 auto;}
+header#header{position:relative; z-index:50;}
+#header_logo>a{display:block; width:120px; margin:0 auto;}
 #header_logo>a>img{display:block; width:100%;}
 #header_menu{}
 #header_menu:after{content:""; display:block; clear:both;}
-#header_menu>div{float:right;}
-#header_menu>div:hover>div{background-color:#f5f5f5; color:#333; }
+#header_menu>div{float:right; _transition:0.5s;}
+#header_menu>div:hover>div{background-color:#f5f5f5; color:#333;}
 #header_menu>div+div{margin-right:10px;}
-#header_menu>div>div{line-height:40px; border:1px solid #ddd; border-radius:25px;}
+#header_menu>div>div{line-height:40px; border:1px solid #bbb; border-radius:25px; transition:0.5s;}
 #header_menu>div>div>i{line-height:40px;}
 
 /*----------메인 서치-----------*/
-	#search_box{position:relative; width:calc(100% - 260px); height:40px; background:#fff; border-radius:25px;}
+	#search_box{position:relative; width:100%; height:40px; background:#fff; border-radius:25px;}
 
-	#search_box>form{position:absolute; right:0; width:100%; height:40px; border:1px solid #ddd; border-radius:25px; overflow:hidden; box-sizing:border-box; padding-left:0; padding-right:0;}
-	#search_box>form>input{border:none; width:calc(100% - 80px); height:25px; margin-top:7.5px; font-size:14px;}
+	#search_box>form{position:absolute; right:0; width:100%; height:40px; border:1px solid #bbb; border-radius:25px; overflow:hidden; box-sizing:border-box; padding-left:0; padding-right:0;}
+	#search_box>form>input{border:none; width:calc(100% - 60px); height:25px; margin-left:15px; margin-top:7.5px; font-size:14px;}
 
-	#search_box>div{_display:none; position:absolute; right:0; width:60px; height:40px; border-radius:25px; text-align:center;}
-	#search_btn{background-color:#fff;}
+	#search_box>div{_display:none; position:absolute; right:0; width:40px; height:40px; border-radius:25px; text-align:center;}
+	#search_btn{background-color:#fff;  border:1px solid #bbb;}
+	#search_btn>i{line-height:40px;}
 /*---------메인 로그인----------*/
 	#login_btn{width:120px; background-color:#fff;}
 
 /*----------메인 구매-----------*/
-	#purchase_btn{width:120px; font-size:14px;}
+	#purchase_btn{width:120px; font-size:14px; background-color:#fff;}
 
 /*------------------------------
 --------로그인 모달 디자인--------
@@ -56,7 +78,7 @@ header{z-index:100;}
 ------------------------------*/
 #real_chart{height:530px;}
 #real_chart>li{margin-bottom:5px}
-#real_chart>li>a{display:block; position:relative; height:40px; border:1px solid #f5f5f5; _background:#f5f5f5; border-radius:20px; _transition:0.3s;}
+#real_chart>li>a{display:block; position:relative; height:40px; border:1px solid #bbb; background:#f5f5f5; border-radius:20px; _transition:0.3s;}
 #real_chart>li>a:after{content:""; display:block; clear:both;}
 #real_chart>li>a>p{float:left; margin-bottom:0; line-height:40px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 #real_chart>li>a>img{_display:none; position:absolute; top:10px; left:12%; width:100px; height:100px; border-radius:5px; transition:0s; opacity:0;}	
@@ -69,7 +91,7 @@ header{z-index:100;}
 	.rankSta.up{color:red;}
 	.rankSta.mid{color:grey;}
 
-#real_chart>li.on>a{height:120px; background-color:#f5f5f5;}
+#real_chart>li.on>a{height:120px; background-color:#fff;}
 #real_chart>li.on>a>img{_display:block; opacity:1; transition:0.5s;}
 #real_chart>li.on>a>.rankNum{font-size:25px; margin-top:5px;}
 #real_chart>li.on>a>.rankTit{position:absolute; width:40%; top:40px; left:50%; line-height:20px; font-size:16px; font-weight:bold;}
@@ -79,11 +101,11 @@ header{z-index:100;}
 /*----------------------------------
 --------실시간차트 스몰 디자인--------
 ----------------------------------*/
-#real_chart_sm{position:relative; width:100%; height:35px; border:1px solid #ddd; border-radius:15px; overflow:hidden;}
+#real_chart_sm{position:relative; width:100%; height:35px; border:1px solid #bbb; background-color:#fff; border-radius:15px; overflow:hidden;}
 #real_chart_sm>ul{position:absolute; width:100%; height:350px;}
 #real_chart_sm>ul>li{}
 #real_chart_sm>ul>li:after{content:""; display:block; clear:both;}
-#real_chart_sm>ul>li>p{float:left; line-height:35px;}
+#real_chart_sm>ul>li>p{float:left; line-height:35px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 	.rankNum_sm{width:15%; text-align:center; font-size:14px; font-weight:bold;}
 	.rankTit_sm{width:40%; font-size:13px; letter-spacing:1px;}
 	.rankAut_sm{width:30%; font-size:11px;}
@@ -96,10 +118,10 @@ header{z-index:100;}
 /*--------------------------------------
 ------------최신 뮤직 페이지-------------
 --------------------------------------*/
-#new_song{height:280px; overflow:hidden; border:1px solid #ddd; border-radius:20px;}
+#new_song{height:280px; overflow:hidden; border:1px solid #bbb; border-radius:20px; background-color:#fff;}
 #new_song>h4{}
 #new_song>ul{height:280px; width:calc(100% + 33px); overflow-y:scroll;  box-shadow: -10px -2px 15px -3px rgba(0,0,0,0.5) inset;}
-#new_song>ul>li{position:relative; height:50px; _border:1px solid #ddd; _overflow:hidden;}
+#new_song>ul>li{position:relative; height:50px; _border:1px solid #ddd; _overflow:hidden; cursor:pointer;}
 #new_song>ul>li:hover{background-color:#f5f5f5;}
 #new_song>ul>li:nth-of-type(n+2){border-top:1px solid #ddd;}
 #new_song>ul>li>div{width:6%; margin-top:18px; padding-left:1%; box-sizing:border-box;}
@@ -116,7 +138,7 @@ header{z-index:100;}
 #new_album{}
 #new_album>h4{}
 #new_album>div{position:relative; width:100%; height:180px; overflow:hidden;}
-#new_album>div>div{position:absolute; width:20px; height:180px; background:#fff; z-index:30; cursor:pointer; text-align:center;}
+#new_album>div>div{position:absolute; width:20px; height:180px; background:#e5e5e5; z-index:30; cursor:pointer; text-align:center;}
 #new_album>div>div>div{background:#f5f5f5}
 #new_album>div>div>div>i{line-height:170px;}
 #new_album>div>ul{position:absolute; width:1395px; top:0; height:180px; left:25px; overflow:hidden;}
@@ -133,18 +155,19 @@ header{z-index:100;}
 #new_album>div>ul>li>div>p:nth-of-type(3){font-size:11px;}
 	#right_btn{right:0;}
 	#left_btn{left:0;}
-	#right_btn>div{border-radius:0 20px 20px 0;}
-	#left_btn>div{border-radius:20px 0 0 20px;}
+	#right_btn>div{border:1px solid #bbb; border-radius:0 20px 20px 0;}
+	#left_btn>div{border:1px solid #bbb; border-radius:20px 0 0 20px;}
 
 /*--------------------------------------
 ------------장르 뮤직 페이지-------------
 --------------------------------------*/
 #genre_tab{}
 #genre_tab>ul{}
-#genre_tab>ul>li{}
+#genre_tab>ul>li{border:1px solid #bbb; border-width:1px 1px 0 1px;}
+#genre_tab>ul>li+li{border-left-width:0;}
 #genre_tab>ul>li>a{font-weight:bold; font-size:12px;}
 
-#tab_contents{border:1px solid #ddd; border-width:0 1px 1px 1px;}
+#tab_contents{border:1px solid #bbb; border-width:0 1px 1px 1px; background:#fff;}
 #tab_contents>div{}
 #tab_contents>div>ul{column-count:2;}
 #tab_contents>div>ul:after{content:""; display:block; clear:both;} 
@@ -168,11 +191,42 @@ header{z-index:100;}
 #tab_thumb{display:none;}
 /*-------------------------------------------
 ------------실시간 차트 페이지 CSS------------
+--------------------------------------------*/ 
+/*-------------------------------------------
+-------------------푸터 CSS------------------
 --------------------------------------------*/
+
+footer#footer{_display:none; width:100%; _height:130px; background:#222;}
+footer#footer>div{height:100%;}
+footer#footer>div>div.row{width:100%;}
+footer#footer>div>div.row>div{margin-top:50px;}
+footer#footer>div>div.row>div:nth-of-type(1){}
+footer#footer>div>div.row>div:nth-of-type(1)>a>img{display:block; width:120px; margin:0 auto;}
+footer#footer>div>div.row>div:nth-of-type(2){color:#999;}
+footer#footer>div>div.row>div:nth-of-type(2)>ul{}
+footer#footer>div>div.row>div:nth-of-type(2)>ul:after{content:""; display:block; clear:both;}
+footer#footer>div>div.row>div:nth-of-type(2)>ul>li{float:left; padding:0 30px;}
+footer#footer>div>div.row>div:nth-of-type(2)>ul>li:first-child{padding-left:0;}
+footer#footer>div>div.row>div:nth-of-type(2)>ul>li+li{border-left:1px solid #999;}
+footer#footer>div>div.row>div:nth-of-type(2)>ul>li>a{display:block; line-height:15px; color:#999; font-size:12px;}
+footer#footer>div>div.row>div:nth-of-type(2)>div{font-size:12px;}
+
+/*-------------------------------------------
+------------실시간 차트 페이지 CSS------------
+--------------------------------------------*/
+
+#real_chart_page_list{width:100%;}
+#real_chart_page_list:after{content:""; display:block; clear:both;}
+#real_chart_page_list>li{float:left; font-size:14px; color:#333; text-align:center;}
+#real_chart_page_list>li:nth-of-type(1){width:10%;}
+#real_chart_page_list>li:nth-of-type(2){width:35%;}
+#real_chart_page_list>li:nth-of-type(3){width:25%;}
+#real_chart_page_list>li:nth-of-type(4){width:18%;}
+#real_chart_page_list>li:nth-of-type(5){width:12%;}
 
 #real_chart_page{}
 #real_chart_page>li{margin-bottom:5px}
-#real_chart_page>li>a{display:block; position:relative; width:96%; margin:0 auto; height:60px; border:1px solid #f5f5f5; border-radius:20px; transition:0.5s; box-sizing:border-box;}
+#real_chart_page>li>a{display:block; position:relative; width:96%; margin:0 auto; height:60px; background:#ededed; border:1px solid #bbb; border-radius:20px; transition:0.5s; box-sizing:border-box;}
 #real_chart_page>li>a:after{content:""; display:block; clear:both;}
 #real_chart_page>li>a>p{float:left; margin-bottom:0; line-height:60px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; transition:0.5s;}
 #real_chart_page>li>a>p>i{line-height:60px;}
@@ -184,16 +238,16 @@ header{z-index:100;}
 	.page_rankAlb{width:20%; font-size:12px; text-align:center;}
 
 	.page_rankSta{width:10%; text-align:center; font-size:12px; font-weight:600;}
-	.page_rankSta>i{font-size:12px margin;}
+	.page_rankSta>i{font-size:12px;}
 	
 	.page_rankSta.down{color:blue;}
 	.page_rankSta.up{color:red;}
 	.page_rankSta.mid{color:grey;}
 
-#real_chart_page>li.on>a{height:110px; background-color:#f5f5f5; border-color:#ddd; width:100%;}
-#real_chart_page>li.on>a>img{width:90px; margin-top:10px;}
+#real_chart_page>li.on>a{height:110px; background-color:#fff; border-color:#bbb; border-width:3px; width:100%;}
+#real_chart_page>li.on>a>img{width:90px; margin-top:7px;}
 #real_chart_page>li.on>a>p{line-height:110px;}
-#real_chart_page>li.on>a>p>i{line-height:110px;}
+#real_chart_page>li.on>a>p>i{margin-top:10px;}
 #real_chart_page>li.on>a>.page_rankNum{font-size:28px; font-weight:800;}
 #real_chart_page>li.on>a>.page_rankTit{font-size:21px; width:calc(40% - 110px);}
 #real_chart_page>li.on>a>.page_rankAut{font-size:16px;}
@@ -201,7 +255,7 @@ header{z-index:100;}
 #real_chart_page>li.on>a>.page_rankSta{font-size:18px;}
 #real_chart_page>li.on>a>.page_rankSta>i{}
 
-#real_chart_page>li.around>a{height:85px; background-color:#fafafa; width:98%;}
+#real_chart_page>li.around>a{height:85px; background-color:#f5f5f5; width:98%;}
 #real_chart_page>li.around>a>img{width:70px; margin-top:7.5px;}
 #real_chart_page>li.around>a>p{line-height:85px;}
 #real_chart_page>li.around>a>p>i{line-height:85px;}
@@ -209,6 +263,17 @@ header{z-index:100;}
 #real_chart_page>li.around>a>.page_rankTit{font-size:18px; width:calc(40% - 90px);}
 #real_chart_page>li.around>a>.page_rankSta{font-size:14px;}
 #real_chart_page>li.around>a>.page_rankSta>i{}
+
+/*-------------------------------------------
+------------최신 앨범 페이지 CSS------------
+--------------------------------------------*/
+	
+
+
+
+
+
+
 
 /*-----------------------------------------
 ------------미디어쿼리 CSS 페이지------------
@@ -233,10 +298,19 @@ header{z-index:100;}
 	.page_rankTit{width:calc(45% - 70px);}
 	.page_rankAut{width:25%;}
 	.page_rankAlb{display:none;}
-	.page_rankSta{width:15%;} 
+	.page_rankSta{width:15%;}
+
+	#real_chart_page_list>li:nth-of-type(1){width:18%;}
+	#real_chart_page_list>li:nth-of-type(2){width:40%;}
+	#real_chart_page_list>li:nth-of-type(3){width:25%;}
+	#real_chart_page_list>li:nth-of-type(4){display:none;}
+	#real_chart_page_list>li:nth-of-type(5){width:17%;}
 	
 	#real_chart_page>li.on>a>.page_rankTit{width:calc(45% - 110px);}
 	#real_chart_page>li.around>a>.page_rankTit{width:calc(45% - 90px);}
+	/*------------------------- 푸터 css -------------------------*/
+	footer#footer>div>div.row>div:nth-of-type(2)>ul{width:425px; margin-bottom:10px;}
+	footer#footer>div>div.row>div:nth-of-type(2)>ul>li{padding:0 20px;}
 }
 
 @media (min-width: 576px) and (max-width: 767px){
@@ -245,15 +319,30 @@ header{z-index:100;}
 	.song_tit{width:35%;}
 	.song_aut{width:13%;}
 	.song_alb{width:13%;}
+	
+	/*-------------------- 로그인&이용권 css --------------------*/
+	#login_btn{width:80px;}
+	#purchase_btn{width:80px;}
+	
 	/*-------------------- 실시간차트 page css --------------------*/
 	.page_rankNum{width:15%; text-align:center;}
 	.page_rankTit{width:calc(45% - 70px);}
 	.page_rankAut{width:25%;}
 	.page_rankAlb{display:none;}
-	.page_rankSta{width:15%;} 
+	.page_rankSta{width:15%;}
+
+	#real_chart_page_list>li:nth-of-type(1){width:18%;}
+	#real_chart_page_list>li:nth-of-type(2){width:40%;}
+	#real_chart_page_list>li:nth-of-type(3){width:25%;}
+	#real_chart_page_list>li:nth-of-type(4){display:none;}
+	#real_chart_page_list>li:nth-of-type(5){width:17%;}
 	
 	#real_chart_page>li.on>a>.page_rankTit{width:calc(45% - 110px);}
 	#real_chart_page>li.around>a>.page_rankTit{width:calc(45% - 90px);}
+
+	/*------------------------- 푸터 css -------------------------*/
+	footer#footer>div>div.row>div:nth-of-type(2)>ul{width:365px; margin:0 auto; margin-bottom:10px;}
+	footer#footer>div>div.row>div:nth-of-type(2)>ul>li{padding:0 20px;}
 }
 
 @media (min-width:500px) and (max-width: 575px){
@@ -267,17 +356,30 @@ header{z-index:100;}
 	.song_tit{width:40%;}
 	.song_aut{width:20%;}
 	.song_alb{display:none !important;}
+	
+	/*-------------------- 로그인&이용권 css --------------------*/
+	#login_btn{width:80px;}
+	#purchase_btn{width:80px;}
 
 	/*-------------------- 실시간차트 page css --------------------*/
 	.page_rankNum{width:15%; text-align:center;}
 	.page_rankTit{width:calc(45% - 70px);}
 	.page_rankAut{width:25%;}
 	.page_rankAlb{display:none;}
-	.page_rankSta{width:15%;} 
+	.page_rankSta{width:15%;}
+
+	#real_chart_page_list>li:nth-of-type(1){width:18%;}
+	#real_chart_page_list>li:nth-of-type(2){width:40%;}
+	#real_chart_page_list>li:nth-of-type(3){width:25%;}
+	#real_chart_page_list>li:nth-of-type(4){display:none;}
+	#real_chart_page_list>li:nth-of-type(5){width:17%;}
 	
 	#real_chart_page>li.on>a>.page_rankTit{width:calc(45% - 110px);}
 	#real_chart_page>li.around>a>.page_rankTit{width:calc(45% - 90px);}
 
+	/*------------------------- 푸터 css -------------------------*/
+	footer#footer>div>div.row>div:nth-of-type(2)>ul{width:365px; margin:0 auto; margin-bottom:10px;}
+	footer#footer>div>div.row>div:nth-of-type(2)>ul>li{padding:0 20px;}
 }
 
 @media (max-width:499px){
@@ -300,12 +402,24 @@ header{z-index:100;}
 	#tab_contents>div>ul>li>div>a{margin-top:10px;}
 	.card-body{padding: 5px 1rem;}
 
+	/*-------------------- 로그인&이용권 css --------------------*/
+	#header_menu>div{width:calc(50% - 5px);}
+	#login_btn{width:100%;}
+	#purchase_btn{width:100%;}
+
 	/*-------------------- 실시간차트 page css --------------------*/
 	.page_rankNum{width:15%; text-align:center;}
 	.page_rankTit{width:calc(45% - 60px);}
 	.page_rankAut{width:25%;}
 	.page_rankAlb{display:none;}
 	.page_rankSta{width:15%;}
+
+	#real_chart_page_list>li:nth-of-type(1){width:18%;}
+	#real_chart_page_list>li:nth-of-type(2){width:40%;}
+	#real_chart_page_list>li:nth-of-type(3){width:25%;}
+	#real_chart_page_list>li:nth-of-type(4){display:none;}
+	#real_chart_page_list>li:nth-of-type(5){width:17%;}
+
 	
 	#real_chart_page>li>a{height:50px;}
 	#real_chart_page>li.around>a{height:60px;}
@@ -315,12 +429,12 @@ header{z-index:100;}
 	#real_chart_page>li.around>a>img{width:50px; margin-top:5px;}
 	#real_chart_page>li.on>a>img{width:70px; margin-top:5px;}
 
-	#real_chart_page>li.on>a>.page_rankNum{font-size:28px;}
-	#real_chart_page>li.on>a>.page_rankAut{font-size:14px;}
-	#real_chart_page>li.on>a>.page_rankSta{font-size:18px;}
-	#real_chart_page>li.around>a>.page_rankNum{font-size:28px;}
-	#real_chart_page>li.around>a>.page_rankAut{font-size:12px;}
-	#real_chart_page>li.around>a>.page_rankSta{font-size:18px;}
+	#real_chart_page>li.on>a>.page_rankNum{font-size:22px;}
+	#real_chart_page>li.on>a>.page_rankAut{font-size:10px;}
+	#real_chart_page>li.on>a>.page_rankSta{font-size:12px;}
+	#real_chart_page>li.around>a>.page_rankNum{font-size:22px;}
+	#real_chart_page>li.around>a>.page_rankAut{font-size:10px;}
+	#real_chart_page>li.around>a>.page_rankSta{font-size:12px;}
 	
 	#real_chart_page>li>a>p{line-height:50px;}
 	#real_chart_page>li>a>p>i{line-height:50px;}
@@ -332,4 +446,8 @@ header{z-index:100;}
 
 	#real_chart_page>li.around>a>.page_rankTit{font-size:16px; width:calc(45% - 70px);}
 	#real_chart_page>li.on>a>.page_rankTit{font-size:18px; width:calc(45% - 90px);}
+
+	/*------------------------- 푸터 css -------------------------*/
+	footer#footer>div>div.row>div:nth-of-type(2)>ul{width:295px; margin:0 auto; margin-bottom:10px;}
+	footer#footer>div>div.row>div:nth-of-type(2)>ul>li{float:left; padding:0 10px;}
 }

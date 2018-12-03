@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Play Width Me</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.easing.min.js"></script>
+	<script src="../js/main.js"></script>
+</head>
+<body>
+	<div id="header_bar">
+		<div class="container p-0">
+			<div class="row" id="header_gnb">
+				<div class="col-12 col-sm-3 m-0" id="header_logo_wh"><a href="../index.html"><img src="../images/logo_wh.png" alt="header_logo_wh"></a></div>
+				<ul class="col-12 col-sm-9 m-0 pr-auto pl-auto"  id="header_menus">						
+					<li><a href="javascript:void(0)" style="text-decoration:line-through">뮤직포스트</a></li>
+					<li><a href="./genre_music.html">장르음악</a></li>					
+					<li><a href="./new_album.html">최신앨범</a></li>
+					<li><a href="./new_song.html">최신곡</a></li>
+					<li><a href="./real_chart.html">실시간차트</a></li>
+				</ul>
+			</div>
+			<div id="header_btn"><div><i class="fas fa-bars"></i></div></div>
+		</div>
+	</div>
+	<div class="modal mt-5" id="login_modal">
+	    <div class="modal-dialog">
+	    	<div class="modal-content">
+	        	<div class="modal-header">
+		          <h4 class="modal-title mr-auto ml-auto">LOGIN</h4>
+		        </div>
+		        <!-- Modal body -->
+		        <div class="modal-body">
+		          	<form action="post">
+		          		<input type="text" placeholder="ID">
+		          		<input type="text" placeholder="PASSWARD">
+		          	</form>
+		        </div>
+		        <!-- Modal footer -->
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-success" data-dismiss="modal">LOGIN</button>
+		          <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+		        </div>
+	    	</div>
+	    </div>
+	</div>
+	<header class="container pt-3 pt-lg-4 mb-0 mb-lg-5" id="header">
+		<div class="row">
+			<div class="col-12 col-sm-3 p-0 pt-4 pt-sm-2 mt-3 mt-lg-0" id="header_logo"><a href="../index.html"><img src="../images/logo.png" alt="logo"></a></div>
+
+			<!-- <div class="col-sm-12 col-md-7 col-lg-5 p-0 mt-3 mt-lg-0" id="header_search">
+				<div id="search_box" class="col-sm-12">
+					<form action="get">
+						<input type="text" placeholder="검색어를 입력해주세요" autofocus>
+					</form>					
+					<div class="btn" id="search_btn"><i class="fas fa-search"></i></div>
+				</div>
+			</div> -->
+
+			<div class="col-12 col-sm-9 p-0 mt-3 mt-lg-0" id="header_menu">
+				<div>
+					<div class="btn" id="purchase_btn"><i class="fas fa-ticket-alt"></i></div>
+				</div>
+				<div>
+					<div class="btn" id="login_btn" data-toggle="modal" data-target="#login_modal"><i class="fas fa-power-off"></i></div>			
+				</div>
+			</div>
+		</div>
+	</header>
+<!-------------------------------------헤더 구분선--------------------------------------->
+	<section class="container mt-3 mt-lg-5">
+		<div class="row">
+			<div class="col-12 p-0">
+				<ul id="real_chart_page_list">
+					<li>순위</li>
+					<li>제목</li>
+					<li>아티스트</li>
+					<li>앨범	</li>
+					<li>변동</li>
+				</ul>
+				<ul id="real_chart_page">
+					<li class="on">
+						<a href="#">
+							<p class="page_rankNum">1</p>
+							<img src="../images/chart/thumb01.jpg" alt="chart_thumb01">
+							<p class="page_rankTit">이 밤이 특별해진 건</p>
+							<p class="page_rankAut">어반 자카파(Urban Zakapa)</p>
+							<p class="page_rankAlb">[05]</p>
+							<p class="page_rankSta up">1</p>
+						</a>
+					</li>
+					<li class="around">
+						<a href="#">
+							<p class="page_rankNum">2</p>
+							<img src="../images/chart/thumb02.jpg" alt="chart_thumb02">
+							<p class="page_rankTit">아낙네</p>
+							<p class="page_rankAut">MINO(송민호)</p>
+							<p class="page_rankAlb">XX</p>
+							<p class="page_rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">3</p>
+							<img src="../images/chart/thumb03.jpg" alt="chart_thumb03">
+							<p class="page_rankTit">눈이 내린다</p>
+							<p class="page_rankAut">지오디(GOD)</p>
+							<p class="page_rankAlb">눈이 내린다</p>
+							<p class="page_rankSta none"></p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">4</p>
+							<img src="../images/chart/thumb04.jpg" alt="chart_thumb04">
+							<p class="page_rankTit">SOLO</p>
+							<p class="page_rankAut">제니(JENNIE)</p>
+							<p class="page_rankAlb">SOLO</p>
+							<p class="page_rankSta up">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">5</p>
+							<img src="../images/chart/thumb05.jpg" alt="chart_thumb05">
+							<p class="page_rankTit">그대가 내 안에 박혔다</p>
+							<p class="page_rankAut">황치열</p>
+							<p class="page_rankAlb">그대가 내 안에 박혔다</p>
+							<p class="page_rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">6</p>
+							<img src="../images/chart/thumb06.jpg" alt="chart_thumb06">
+							<p class="page_rankTit">알러뷰</p>
+							<p class="page_rankAut">EXID</p>
+							<p class="page_rankAlb">알러뷰</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">7</p>
+							<img src="../images/chart/thumb07.jpg" alt="chart_thumb07">
+							<p class="page_rankTit">YES or YES</p>
+							<p class="page_rankAut">TWICE(트와이스)</p>
+							<p class="page_rankAlb">YES or YES</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">8</p>
+							<img src="../images/chart/thumb08.jpg" alt="chart_thumb08">
+							<p class="page_rankTit">thank u, next</p>
+							<p class="page_rankAut">Ariana Grande(아리아나 그란데)</p>
+							<p class="page_rankAlb">thank u, next</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a 1href="#">
+							<p class="page_rankNum">9</p>
+							<img src="../images/chart/thumb09.jpg" alt="chart_thumb09">
+							<p class="page_rankTit">너를 만나</p>
+							<p class="page_rankAut">폴킴(Pual Kim)</p>
+							<p class="page_rankAlb">너를 만나</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">10</p>
+							<img src="../images/chart/thumb10.jpg" alt="chart_thumb10">
+							<p class="page_rankTit">찾아가세요</p>
+							<p class="page_rankAut">러블리즈(Lovelyz)</p>
+							<p class="page_rankAlb">Lovelyz 5th Mini Album</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">11</p>
+							<img src="../images/chart/thumb11.jpg" alt="chart_thumb11">
+							<p class="page_rankTit">뜻대로</p>
+							<p class="page_rankAut">어반 자카파(Urban Zakapa)</p>
+							<p class="page_rankAlb">[05]</p>
+							<p class="page_rankSta up">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">12</p>
+							<img src="../images/chart/thumb12.jpg" alt="chart_thumb12">
+							<p class="page_rankTit">Bohemian Rhapsody</p>
+							<p class="page_rankAut">Qeen퀸</p>
+							<p class="page_rankAlb">보헤미안 랩소디(Bohemian Rhapsody) OST</p>
+							<p class="page_rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">13</p>
+							<img src="../images/chart/thumb13.jpg" alt="chart_thumb13">
+							<p class="page_rankTit">아름답고도 아프구나</p>
+							<p class="page_rankAut">비투비</p>
+							<p class="page_rankAlb">HOUR MOMENT</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">14</p>
+							<img src="../images/chart/thumb14.jpg" alt="chart_thumb14">
+							<p class="page_rankTit">My Trouble</p>
+							<p class="page_rankAut">볼빨간 사춘기</p>
+							<p class="page_rankAlb">WHY:당신이 연인에게 차인 진짜 이유</p>
+							<p class="page_rankSta up">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">15</p>
+							<img src="../images/chart/thumb15.jpg" alt="chart_thumb15">
+							<p class="page_rankTit">내 생에 아름다운</p>
+							<p class="page_rankAut">케이윌</p>
+							<p class="page_rankAlb">뷰티 안사이드 OST</p>
+							<p class="page_rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">16</p>
+							<img src="../images/chart/thumb16.jpg" alt="chart_thumb16">
+							<p class="page_rankTit">삐삐</p>
+							<p class="page_rankAut">아이유(IU)</p>
+							<p class="page_rankAlb">삐삐</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">17</p>
+							<img src="../images/chart/thumb17.jpg" alt="chart_thumb17">
+							<p class="page_rankTit">북향(Feat.오혁)</p>
+							<p class="page_rankAut">다이나믹 듀오(Dynamic Duo)</p>
+							<p class="page_rankAlb">북향</p>
+							<p class="page_rankSta up">5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">18</p>
+							<img src="../images/chart/thumb18.jpg" alt="chart_thumb18">
+							<p class="page_rankTit">너는 어땠을까</p>
+							<p class="page_rankAut">노을</p>
+							<p class="page_rankAlb">별</p>
+							<p class="page_rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">19</p>
+							<img src="../images/chart/thumb19.jpg" alt="chart_thumb19">
+							<p class="page_rankTit">HELP ME</p>
+							<p class="page_rankAut">뉴이스트 W</p>
+							<p class="page_rankAlb">WAKE, N</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">20</p>
+							<img src="../images/chart/thumb20.jpg" alt="chart_thumb20">
+							<p class="page_rankTit">고백</p>
+							<p class="page_rankAut">양다일</p>
+							<p class="page_rankAlb">고백</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">21</p>
+							<img src="../images/chart/thumb21.jpg" alt="chart_thumb21">
+							<p class="page_rankTit">Don't Stop Me Now</p>
+							<p class="page_rankAut">Qeen(퀸)</p>
+							<p class="page_rankAlb">보헤미안 랩소디(Bohemian Rhapsody) OST</p>
+							<p class="page_rankSta up">2</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">22</p>
+							<img src="../images/chart/thumb22.jpg" alt="chart_thumb22">
+							<p class="page_rankTit">소년점프(Feat.배기성)</p>
+							<p class="page_rankAut">마미손</p>
+							<p class="page_rankAlb">소년점프</p>
+							<p class="page_rankSta down">4</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">23</p>
+							<img src="../images/chart/thumb23.jpg" alt="chart_thumb23">
+							<p class="page_rankTit">It's You(Feat.ZICO)</p>
+							<p class="page_rankAut">샘김(SAM KIM)</p>
+							<p class="page_rankAlb">Sun And Moon</p>
+							<p class="page_rankSta up">5</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">24</p>
+							<img src="../images/chart/thumb24.jpg" alt="chart_thumb24">
+							<p class="page_rankTit">라비앙로즈(La Vie en Rose)</p>
+							<p class="page_rankAut">IZ*ONE(아이즈원)</p>
+							<p class="page_rankAlb">COLOR*IZ</p>
+							<p class="page_rankSta down">3</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">25</p>
+							<img src="../images/chart/thumb25.jpg" alt="chart_thumb25">
+							<p class="page_rankTit">POP / STAR</p>
+							<p class="page_rankAut">(여자)아이들</p>
+							<p class="page_rankAlb">POP / STAR</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">26</p>
+							<img src="../images/chart/thumb26.jpg" alt="chart_thumb26">
+							<p class="page_rankTit">가을 타나봐</p>
+							<p class="page_rankAut">바이브(Vibe)</p>
+							<p class="page_rankAlb">가읉 타나봐</p>
+							<p class="page_rankSta none">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">27</p>
+							<img src="../images/chart/thumb27.jpg" alt="chart_thumb27">
+							<p class="page_rankTit">모든날, 모든 순간(Every day, Every Moment)</p>
+							<p class="page_rankAut">폴킴(Pual Kim)</p>
+							<p class="page_rankAlb">'키스 먼저 할까요?' OST</p>
+							<p class="page_rankSta down">3</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">28</p>
+							<img src="../images/chart/thumb28.jpg" alt="chart_thumb28">
+							<p class="page_rankTit">Goodbye</p>
+							<p class="page_rankAut">웬디(WENDY)</p>
+							<p class="page_rankAlb">뷰티 인사이드 OST</p>
+							<p class="page_rankSta down">1</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">29</p>
+							<img src="../images/chart/thumb29.jpg" alt="chart_thumb29">
+							<p class="page_rankTit">비틀비틀</p>
+							<p class="page_rankAut">어반 자카파(Urban Zakapa)</p>
+							<p class="page_rankAlb">[05]</p>
+							<p class="page_rankSta up">7</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p class="page_rankNum">30</p>
+							<img src="../images/chart/thumb30.jpg" alt="chart_thumb30">
+							<p class="page_rankTit">봄바람</p>
+							<p class="page_rankAut">Wanna One(워너원)</p>
+							<p class="page_rankAlb">1"=1(POWER OF DESTINY)</p>
+							<p class="page_rankSta up">1</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+<!-------------------------------------푸터 구분선--------------------------------------->
+	<footer id="footer">
+		<div class="container p-0">
+			<div class="row m-0">
+				<div class="col-12 col-md-5 col-lg-3 pt-4 pb-1 pb-mb-4 m-0">
+					<a href="javascript:void(0)"><img src="../images/logo_wh.png" alt="logo_wh"></a>
+				</div>
+				<div class="col-12 col-md-5 col-lg-9 text-center text-md-left pt-4 pb-4 pl-lg-5 m-0">
+					<ul>
+						<li><a href="javascript:void(0)">회사소개</a></li>
+						<li><a href="javascript:void(0)">이용약관</a></li>
+						<li><a href="javascript:void(0)">개인정보처리방침</a></li>
+						<li><a href="javascript:void(0)">고객센터</a></li>						
+					</ul>
+					<div>
+						<p>COPYRIGHTⓒ 2018. All rights reserved by ㅇㅈㄱ.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

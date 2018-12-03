@@ -1,16 +1,64 @@
 $(function(){
-	chartNum();		//실시간 차트 상승하강 아이콘 삽입값
 
+	chartNum(); 	//실시간 차트 상승하강 아이콘 삽입값
 	moveChart();	//실시간 차트 스몰 차트 움직임
 
-	$("#real_chart>li").on("mouseenter",function(){
-		$("#real_chart>li").removeClass("on");
-		$(this).addClass("on");
+	//---------------------------------------------------
+	//-------------실시간차트 이벤트 스크립트--------------
+	//---------------------------------------------------
+	var nextSet;
+	var realInd = 0;
+	var realChartMo = setInterval(function(){		
+			realChartMove();
+		},3000);
+
+	$("#real_chart>li").on({
+		mouseenter:function(){
+			clearInterval(realChartMo);
+			clearInterval(nextSet);
+			$("#real_chart>li").removeClass("on");
+			$(this).addClass("on");
+			realInd = $(this).index();		
+		},mouseleave:function(){
+			nextSet = setInterval(function(){		
+				realChartMove();
+			},3000);
+		}
 	});
+	function realChartMove(){
+		realInd++;
+		if(realInd > 9) realInd = 0;
+		$("#real_chart>li").removeClass("on");
+		$("#real_chart>li").eq(realInd).addClass("on");
+	}
+	//----------------- 차트 클릭시 정보------------------
 
 	$("#real_chart_sm>li").on("click",function(){
 		
 	});
+
+	//-----------------------------------------------
+	//-------------해더바 이벤트 스크립트--------------
+	//-----------------------------------------------
+	var headerSt = true;
+	
+	$("#header_btn").click(function(){
+		if(headerSt){
+			$("#header_gnb").stop().animate({height:81},500);
+			$("#header_btn").stop().animate({top:79},500);
+			$("#header_logo_wh").stop().delay(400).animate({opacity:1});
+			$("#header_menus").stop().delay(300).animate({opacity:1});
+			headerSt = false;
+		}else{
+			$("#header_gnb").stop().animate({height:0},500);
+			$("#header_btn").stop().animate({top:-1},500);
+			$("#header_logo_wh").stop().animate({opacity:0});
+			$("#header_menus").stop().animate({opacity:0});
+			headerSt = true;
+		}
+
+	})
+
 	//-----------------------------------------------
 	//-------------스크롤 이벤트 스크립트--------------
 	//-----------------------------------------------
@@ -46,17 +94,17 @@ $(function(){
 	//-------------------------------------------
 	//-------------서치버튼 스크립트--------------
 	//-------------------------------------------
-	var btnState = true;
-	$("#search_btn").click(function(){
-		if(btnState){
-			$("#search_box>form").animate({width:350,paddingLeft:20,paddingRight:70},500,"easeOutSine");
-			btnState = false;
-			$("#search_box>form>input").focus();
-		}else{
-			$("#search_box>form").animate({width:40,paddingLeft:0,paddingRight:0},500,"easeOutSine");
-			btnState = true;
-		}
-	})
+	// var btnState = true;
+	// $("#search_btn").click(function(){
+	// 	if(btnState){
+	// 		$("#search_box>form").animate({width:350,paddingLeft:20,paddingRight:70},500,"easeOutSine");
+	// 		btnState = false;
+	// 		$("#search_box>form>input").focus();
+	// 	}else{
+	// 		$("#search_box>form").animate({width:40,paddingLeft:0,paddingRight:0},500,"easeOutSine");
+	// 		btnState = true;
+	// 	}
+	// })
 
 	//-------------------------------------------
 	//-----------최신곡 그림자 스크립트------------
@@ -94,9 +142,9 @@ $(function(){
 
 
 
-//-------------------------------------------
-//------------실시간차트  스크립트-------------
-//-------------------------------------------
+//-------------------------------------------------
+//------------실시간차트 page  스크립트-------------
+//-------------------------------------------------
 
 function moveChart(){
 	var topPos = 0;
