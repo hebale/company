@@ -3,6 +3,62 @@ $(function(){
 	chartNum(); 	//실시간 차트 상승하강 아이콘 삽입값
 	moveChart();	//실시간 차트 스몰 차트 움직임
 
+	//----------------------------------------------------
+	//-------------윈도우 크기 이벤트 스크립트--------------
+	//----------------------------------------------------
+	var windowSize = $(window).width();
+
+	$(window).resize(function(){
+		windowSize = $(window).outerWidth();
+		//토글 메뉴가 열렸을시 레이아웃 변화
+		if(!headerSt) headerBar();
+		
+		console.log(windowSize);
+		//console.log(windowinSize);
+	});
+	
+	//-----------------------------------------------
+	//-------------해더바 이벤트 스크립트--------------
+	//-----------------------------------------------
+	var headerSt = true;
+	
+	$("#header_btn").click(function(){
+		if(headerSt){
+			headerBar();
+			headerSt = false;
+		}else{
+			$("#header_gnb").stop().animate({height:0},500);
+			$("#header_btn").stop().animate({top:-1},500);
+			$("#header_logo_wh").stop().animate({opacity:0});
+			$("#header_menus").stop().animate({opacity:0});			
+			headerSt = true;
+		}
+	})
+
+	function headerBar(){
+		if(windowSize >= 992){
+			console.log("pc");
+			$("#header_gnb").removeClass("tablet");
+			$("#header_gnb").removeClass("mobile");
+			$("#header_gnb").stop().animate({height:101},450,"easeOutCubic");
+			$("#header_btn").stop().animate({top:99},450,"easeOutCubic");
+		}else if(windowSize >= 768){
+			console.log("tablet");
+			$("#header_gnb").removeClass("mobile");
+			$("#header_gnb").addClass("tablet");
+			$("#header_gnb").stop().animate({height:161},450,"easeOutCubic");
+			$("#header_btn").stop().animate({top:159},450,"easeOutCubic");
+		}else{
+			console.log("mobile");
+			$("#header_gnb").removeClass("tablet");
+			$("#header_gnb").addClass("mobile");
+			$("#header_gnb").stop().animate({height:301},450,"easeOutCubic");
+			$("#header_btn").stop().animate({top:299},450,"easeOutCubic");		
+		}
+		$("#header_logo_wh").stop().delay(400).animate({opacity:1});
+		$("#header_menus").stop().delay(300).animate({opacity:1});
+	}
+
 	//---------------------------------------------------
 	//-------------실시간차트 이벤트 스크립트--------------
 	//---------------------------------------------------
@@ -38,34 +94,14 @@ $(function(){
 	});
 
 	//-----------------------------------------------
-	//-------------해더바 이벤트 스크립트--------------
-	//-----------------------------------------------
-	var headerSt = true;
-	
-	$("#header_btn").click(function(){
-		if(headerSt){
-			$("#header_gnb").stop().animate({height:81},500);
-			$("#header_btn").stop().animate({top:79},500);
-			$("#header_logo_wh").stop().delay(400).animate({opacity:1});
-			$("#header_menus").stop().delay(300).animate({opacity:1});
-			headerSt = false;
-		}else{
-			$("#header_gnb").stop().animate({height:0},500);
-			$("#header_btn").stop().animate({top:-1},500);
-			$("#header_logo_wh").stop().animate({opacity:0});
-			$("#header_menus").stop().animate({opacity:0});
-			headerSt = true;
-		}
-
-	})
-
-	//-----------------------------------------------
 	//-------------스크롤 이벤트 스크립트--------------
 	//-----------------------------------------------
 	var listInd = 1;
 
 	$(window).scroll(function(){
 		
+		console.log(windowSize);
+
 		var scrollTop = $(window).scrollTop();
 		// var ulLIst = $("#real_chart_page").height() / 30;
 		var ulList = ($(document).height() - $(window).height()) / 30;
@@ -73,7 +109,7 @@ $(function(){
 
 		//console.log(scrollTop);
 		//console.log(ulList);
-		console.log(listInd);
+		//console.log(listInd);
 		if(listInd > 29) return;
 
 		$("#real_chart_page>li").removeClass();
@@ -139,8 +175,6 @@ $(function(){
 	});
 
 });
-
-
 
 //-------------------------------------------------
 //------------실시간차트 page  스크립트-------------
