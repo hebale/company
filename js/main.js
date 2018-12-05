@@ -2,6 +2,7 @@ $(function(){
 
 	chartNum(); 	//실시간 차트 상승하강 아이콘 삽입값
 	moveChart();	//실시간 차트 스몰 차트 움직임
+	newSongSize();  //최신음악 페이지 최신곡 높이
 
 	//----------------------------------------------------
 	//-------------윈도우 크기 이벤트 스크립트--------------
@@ -9,12 +10,25 @@ $(function(){
 	var windowSize = $(window).width();
 
 	$(window).resize(function(){
+
+		// if($(window).outerWidth() >= 992){
+		// 	windowSize = "pc";
+		// }else if(($(window).outerWidth() >= 768){
+		// 	windowSize = "tablet";
+		// }else{
+		// 	windowSize = "moblie";
+		// }  브라우저 사이즈별 라벨링 
+
 		windowSize = $(window).outerWidth();
-		//토글 메뉴가 열렸을시 레이아웃 변화
-		if(!headerSt) headerBar();
+	
+		if(!headerSt) headerBar(); 	//토글 메뉴가 열렸을시 레이아웃 변화
 		
 		console.log(windowSize);
 		//console.log(windowinSize);
+
+
+		//-------------최신음악 높이 변화--------------
+		newSongSize();
 	});
 	
 	//-----------------------------------------------
@@ -30,7 +44,7 @@ $(function(){
 			$("#header_gnb").stop().animate({height:0},500);
 			$("#header_btn").stop().animate({top:-1},500);
 			$("#header_logo_wh").stop().animate({opacity:0});
-			$("#header_menus").stop().animate({opacity:0});			
+			$("#header_menus").stop().animate({opacity:0});			6
 			headerSt = true;
 		}
 	})
@@ -177,9 +191,23 @@ $(function(){
 });
 
 //-------------------------------------------------
+//--------------최신음악 page  스크립트-------------
+//-------------------------------------------------
+function newSongSize(){
+	var headerH = $("#header").outerHeight(true);
+	var footerH = $("#footer").height();
+	var sum = footerH+headerH;
+
+	// 62px = h5의 높이값 + #new_song_page 바텀 마진값
+
+	$("#new_song_page").css({height:"calc(100vh - "+ (sum + 62) +"px)"});
+	$("#new_song_page>ul").css({height:"calc(100vh - "+ (sum + 62)+"px)"});
+	$("#new_album_page").css({height:"calc(100vh - "+ (sum + 62) +"px)"});
+}	
+
+//-------------------------------------------------
 //------------실시간차트 page  스크립트-------------
 //-------------------------------------------------
-
 function moveChart(){
 	var topPos = 0;
 	setInterval(function(){
